@@ -1,0 +1,264 @@
+current directory: /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -r ./siteconf20201031-51715-1g6hxhw.rb extconf.rb
+checking for ffi.h... no
+checking for ffi.h in /usr/local/include,/usr/include/ffi... yes
+checking for ffi_call() in -lffi... yes
+checking for ffi_closure_alloc()... no
+checking for ffi_raw_call()... no
+checking for shlwapi.h... no
+checking for ruby/thread.h... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+creating extconf.h
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/extensions/universal-darwin-17/2.3.0/ffi-1.9.25/mkmf.log
+
+current directory: /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c
+make "DESTDIR=" clean
+
+current directory: /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c
+make "DESTDIR="
+mkdir -p "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386; (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure ]; then echo "Running autoreconf for libffi"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi" && /bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/autogen.sh > /dev/null; fi); (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386/Makefile ]; then echo "Configuring libffi for i386"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386 && env CC=" xcrun clang" CFLAGS="-arch i386 " LDFLAGS="-arch i386" "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure --disable-static --with-pic=yes --disable-dependency-tracking --disable-docs --host=i386-apple-darwin > /dev/null; fi); env MACOSX_DEPLOYMENT_TARGET=10.4 /Library/Developer/CommandLineTools/usr/bin/make -C "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386
+Configuring libffi for i386
+clang: error: unsupported option '-print-multi-os-directory'
+clang: error: no input files
+/Library/Developer/CommandLineTools/usr/bin/make 'AR_FLAGS=' 'CC_FOR_BUILD=' 'CFLAGS=-arch i386  -Wall -fexceptions' 'CXXFLAGS=-g -O2' 'CFLAGS_FOR_BUILD=' 'CFLAGS_FOR_TARGET=' 'INSTALL=/usr/bin/install -c' 'INSTALL_DATA=/usr/bin/install -c -m 644' 'INSTALL_PROGRAM=/usr/bin/install -c' 'INSTALL_SCRIPT=/usr/bin/install -c' 'JC1FLAGS=' 'LDFLAGS=-arch i386' 'LIBCFLAGS=' 'LIBCFLAGS_FOR_TARGET=' 'MAKE=/Library/Developer/CommandLineTools/usr/bin/make' 'MAKEINFO=/bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/missing makeinfo ' 'PICFLAG=' 'PICFLAG_FOR_TARGET=' 'RUNTESTFLAGS=' 'SHELL=/bin/sh' 'exec_prefix=/usr/local' 'infodir=/usr/local/share/info' 'libdir=/usr/local/lib' 'mandir=/usr/local/share/man' 'prefix=/usr/local' 'AR=ar' 'AS=as' 'CC=xcrun clang' 'CXX=g++' 'LD=/Library/Developer/CommandLineTools/usr/bin/ld' 'NM=nm' 'RANLIB=ranlib' 'DESTDIR=' all-recursive
+Making all in include
+make[3]: Nothing to be done for `all'.
+Making all in testsuite
+make[3]: Nothing to be done for `all'.
+Making all in man
+make[3]: Nothing to be done for `all'.
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch i386  -Wall -fexceptions -c -o src/prep_cif.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/prep_cif.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/prep_cif.c  -fno-common -DPIC -o src/.libs/prep_cif.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch i386  -Wall -fexceptions -c -o src/types.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/types.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/types.c  -fno-common -DPIC -o src/.libs/types.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch i386  -Wall -fexceptions -c -o src/raw_api.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/raw_api.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/raw_api.c  -fno-common -DPIC -o src/.libs/raw_api.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch i386  -Wall -fexceptions -c -o src/java_raw_api.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/java_raw_api.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/java_raw_api.c  -fno-common -DPIC -o src/.libs/java_raw_api.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch i386  -Wall -fexceptions -c -o src/closures.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/closures.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/closures.c  -fno-common -DPIC -o src/.libs/closures.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch i386  -Wall -fexceptions -c -o src/x86/ffi.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/ffi.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/ffi.c  -fno-common -DPIC -o src/x86/.libs/ffi.o
+/bin/sh ./libtool    --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386  -c -o src/x86/sysv.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/sysv.S
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch i386 -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/sysv.S  -fno-common -DPIC -o src/x86/.libs/sysv.o
+/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/sysv.S:808:11: warning: section "__textcoal_nt" is deprecated
+ .section __TEXT,__textcoal_nt,coalesced,pure_instructions; .weak_definition ___x86.get_pc_thunk.bx; .private_extern ___x86.get_pc_thunk.bx
+          ^      ~~~~~~~~~~~~~
+/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/sysv.S:808:11: note: change section name to "__text"
+ .section __TEXT,__textcoal_nt,coalesced,pure_instructions; .weak_definition ___x86.get_pc_thunk.bx; .private_extern ___x86.get_pc_thunk.bx
+          ^      ~~~~~~~~~~~~~
+/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/sysv.S:814:11: warning: section "__textcoal_nt" is deprecated
+ .section __TEXT,__textcoal_nt,coalesced,pure_instructions; .weak_definition ___x86.get_pc_thunk.dx; .private_extern ___x86.get_pc_thunk.dx
+          ^      ~~~~~~~~~~~~~
+/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/sysv.S:814:11: note: change section name to "__text"
+ .section __TEXT,__textcoal_nt,coalesced,pure_instructions; .weak_definition ___x86.get_pc_thunk.dx; .private_extern ___x86.get_pc_thunk.dx
+          ^      ~~~~~~~~~~~~~
+/bin/sh ./libtool  --tag=CC   --mode=link xcrun clang  -arch i386  -Wall -fexceptions  -arch i386 -o libffi_convenience.la  src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo   src/x86/ffi.lo src/x86/sysv.lo 
+libtool: link: ar cru .libs/libffi_convenience.a src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/x86/.libs/ffi.o src/x86/.libs/sysv.o 
+libtool: link: ranlib .libs/libffi_convenience.a
+libtool: link: ( cd ".libs" && rm -f "libffi_convenience.la" && ln -s "../libffi_convenience.la" "libffi_convenience.la" )
+/bin/sh ./libtool  --tag=CC   --mode=link xcrun clang  -arch i386  -Wall -fexceptions -no-undefined -version-info `grep -v '^#' /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/libtool-version`   '-arch' 'i386'  -arch i386 -o libffi.la -rpath /usr/local/lib src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo  src/x86/ffi.lo src/x86/sysv.lo 
+libtool: link:  xcrun clang -dynamiclib  -o .libs/libffi.7.dylib  src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/x86/.libs/ffi.o src/x86/.libs/sysv.o    -arch i386 -arch i386 -arch i386   -install_name  /usr/local/lib/libffi.7.dylib -compatibility_version 9 -current_version 9.0 -Wl,-single_module
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: could not create compact unwind for _ffi_call_i386: non-standard register 5 being saved in prolog
+ld: warning: could not create compact unwind for _ffi_go_closure_EAX: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_go_closure_ECX: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_i386: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_go_closure_STDCALL: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_REGISTER: register saved more than once (might be shrink wrap)
+ld: warning: could not create compact unwind for _ffi_closure_STDCALL: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_raw_SYSV: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_raw_THISCALL: register saved more than once (might be shrink wrap)
+libtool: link: (cd ".libs" && rm -f "libffi.dylib" && ln -s "libffi.7.dylib" "libffi.dylib")
+libtool: link: ( cd ".libs" && rm -f "libffi.la" && ln -s "../libffi.la" "libffi.la" )
+mkdir -p "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64; (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure ]; then echo "Running autoreconf for libffi"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi" && /bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/autogen.sh > /dev/null; fi); (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64/Makefile ]; then echo "Configuring libffi for x86_64"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64 && env CC=" xcrun clang" CFLAGS="-arch x86_64 " LDFLAGS="-arch x86_64" "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure --disable-static --with-pic=yes --disable-dependency-tracking --disable-docs --host=x86_64-apple-darwin > /dev/null; fi); env MACOSX_DEPLOYMENT_TARGET=10.4 /Library/Developer/CommandLineTools/usr/bin/make -C "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64
+Configuring libffi for x86_64
+clang: error: unsupported option '-print-multi-os-directory'
+clang: error: no input files
+/Library/Developer/CommandLineTools/usr/bin/make 'AR_FLAGS=' 'CC_FOR_BUILD=' 'CFLAGS=-arch x86_64  -Wall -fexceptions' 'CXXFLAGS=-g -O2' 'CFLAGS_FOR_BUILD=' 'CFLAGS_FOR_TARGET=' 'INSTALL=/usr/bin/install -c' 'INSTALL_DATA=/usr/bin/install -c -m 644' 'INSTALL_PROGRAM=/usr/bin/install -c' 'INSTALL_SCRIPT=/usr/bin/install -c' 'JC1FLAGS=' 'LDFLAGS=-arch x86_64' 'LIBCFLAGS=' 'LIBCFLAGS_FOR_TARGET=' 'MAKE=/Library/Developer/CommandLineTools/usr/bin/make' 'MAKEINFO=/bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/missing makeinfo ' 'PICFLAG=' 'PICFLAG_FOR_TARGET=' 'RUNTESTFLAGS=' 'SHELL=/bin/sh' 'exec_prefix=/usr/local' 'infodir=/usr/local/share/info' 'libdir=/usr/local/lib' 'mandir=/usr/local/share/man' 'prefix=/usr/local' 'AR=ar' 'AS=as' 'CC=xcrun clang' 'CXX=g++' 'LD=/Library/Developer/CommandLineTools/usr/bin/ld' 'NM=nm' 'RANLIB=ranlib' 'DESTDIR=' all-recursive
+Making all in include
+make[3]: Nothing to be done for `all'.
+Making all in testsuite
+make[3]: Nothing to be done for `all'.
+Making all in man
+make[3]: Nothing to be done for `all'.
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch x86_64  -Wall -fexceptions -c -o src/prep_cif.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/prep_cif.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/prep_cif.c  -fno-common -DPIC -o src/.libs/prep_cif.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch x86_64  -Wall -fexceptions -c -o src/types.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/types.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/types.c  -fno-common -DPIC -o src/.libs/types.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch x86_64  -Wall -fexceptions -c -o src/raw_api.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/raw_api.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/raw_api.c  -fno-common -DPIC -o src/.libs/raw_api.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch x86_64  -Wall -fexceptions -c -o src/java_raw_api.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/java_raw_api.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/java_raw_api.c  -fno-common -DPIC -o src/.libs/java_raw_api.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch x86_64  -Wall -fexceptions -c -o src/closures.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/closures.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/closures.c  -fno-common -DPIC -o src/.libs/closures.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch x86_64  -Wall -fexceptions -c -o src/x86/ffi64.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/ffi64.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/ffi64.c  -fno-common -DPIC -o src/x86/.libs/ffi64.o
+/bin/sh ./libtool    --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64  -c -o src/x86/unix64.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/unix64.S
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/unix64.S  -fno-common -DPIC -o src/x86/.libs/unix64.o
+/bin/sh ./libtool  --tag=CC   --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src   -arch x86_64  -Wall -fexceptions -c -o src/x86/ffiw64.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/ffiw64.c
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -Wall -fexceptions -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/ffiw64.c  -fno-common -DPIC -o src/x86/.libs/ffiw64.o
+/bin/sh ./libtool    --mode=compile xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src  -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64  -c -o src/x86/win64.lo /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/win64.S
+libtool: compile:  xcrun clang -DHAVE_CONFIG_H -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -I. -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/include -Iinclude -I/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src -arch x86_64 -c /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/src/x86/win64.S  -fno-common -DPIC -o src/x86/.libs/win64.o
+/bin/sh ./libtool  --tag=CC   --mode=link xcrun clang  -arch x86_64  -Wall -fexceptions  -arch x86_64 -o libffi_convenience.la  src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo   src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffiw64.lo src/x86/win64.lo 
+libtool: link: ar cru .libs/libffi_convenience.a src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/x86/.libs/ffi64.o src/x86/.libs/unix64.o src/x86/.libs/ffiw64.o src/x86/.libs/win64.o 
+libtool: link: ranlib .libs/libffi_convenience.a
+libtool: link: ( cd ".libs" && rm -f "libffi_convenience.la" && ln -s "../libffi_convenience.la" "libffi_convenience.la" )
+/bin/sh ./libtool  --tag=CC   --mode=link xcrun clang  -arch x86_64  -Wall -fexceptions -no-undefined -version-info `grep -v '^#' /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/libtool-version`   '-arch' 'x86_64'  -arch x86_64 -o libffi.la -rpath /usr/local/lib src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo  src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffiw64.lo src/x86/win64.lo 
+libtool: link:  xcrun clang -dynamiclib  -o .libs/libffi.7.dylib  src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/x86/.libs/ffi64.o src/x86/.libs/unix64.o src/x86/.libs/ffiw64.o src/x86/.libs/win64.o    -arch x86_64 -arch x86_64 -arch x86_64   -install_name  /usr/local/lib/libffi.7.dylib -compatibility_version 9 -current_version 9.0 -Wl,-single_module
+ld: warning: ld: warning: could not create compact unwind for _ffi_call_unix64: does not use RBP or RSP based framecould not create compact unwind for _ffi_closure_win64_inner: non-standard register 4 being saved in prolog
+
+libtool: link: (cd ".libs" && rm -f "libffi.dylib" && ln -s "libffi.7.dylib" "libffi.dylib")
+libtool: link: ( cd ".libs" && rm -f "libffi.la" && ln -s "../libffi.la" "libffi.la" )
+# Assemble into a FAT (x86_64, i386, ppc) library
+/usr/bin/libtool -static -o "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi-universal-darwin17"/.libs/libffi_convenience.a \
+	    "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386/.libs/libffi_convenience.a "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64/.libs/libffi_convenience.a
+rm -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi-universal-darwin17"/include/ffi.h
+compiling Thread.c
+compiling Buffer.c
+compiling DynamicLibrary.c
+compiling Variadic.c
+compiling ffi.c
+compiling Pointer.c
+compiling MemoryPointer.c
+compiling Platform.c
+compiling LongDouble.c
+compiling Function.c
+Function.c:951:17: warning: 'ffi_prep_closure' is deprecated [-Wdeprecated-declarations]
+    ffiStatus = ffi_prep_closure(code, &fnInfo->ffi_cif, callback_invoke, closure);
+                ^
+./libffi-x86_64/include/ffi.h:339:18: note: 'ffi_prep_closure' has been explicitly marked deprecated here
+  __attribute__((deprecated))
+                 ^
+1 warning generated.
+Function.c:951:17: warning: 'ffi_prep_closure' is deprecated [-Wdeprecated-declarations]
+    ffiStatus = ffi_prep_closure(code, &fnInfo->ffi_cif, callback_invoke, closure);
+                ^
+./libffi-i386/include/ffi.h:339:18: note: 'ffi_prep_closure' has been explicitly marked deprecated here
+  __attribute__((deprecated))
+                 ^
+1 warning generated.
+compiling MappedType.c
+compiling Type.c
+compiling Types.c
+compiling StructLayout.c
+compiling DataConverter.c
+compiling ArrayType.c
+compiling StructByReference.c
+compiling LastError.c
+compiling Struct.c
+compiling Call.c
+compiling MethodHandle.c
+compiling AbstractMemory.c
+compiling FunctionInfo.c
+compiling ClosurePool.c
+compiling StructByValue.c
+linking shared-object ffi_c.bundle
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+ld: warning: text-based stub file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.tbd and library file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib are out of sync. Falling back to library file for linking.
+ld: warning: could not create compact unwind for _ffi_closure_win64_inner: non-standard register 4 being saved in prolog
+ld: warning: could not create compact unwind for _ffi_call_unix64: does not use RBP or RSP based frame
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+ld: warning: text-based stub file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.tbd and library file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib are out of sync. Falling back to library file for linking.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: could not create compact unwind for _ffi_call_i386: non-standard register 5 being saved in prolog
+ld: warning: could not create compact unwind for _ffi_go_closure_EAX: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_go_closure_ECX: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_i386: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_go_closure_STDCALL: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_REGISTER: register saved more than once (might be shrink wrap)
+ld: warning: could not create compact unwind for _ffi_closure_STDCALL: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_raw_SYSV: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_raw_THISCALL: register saved more than once (might be shrink wrap)
+
+current directory: /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c
+make "DESTDIR=" install
+mkdir -p "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386; (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure ]; then echo "Running autoreconf for libffi"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi" && /bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/autogen.sh > /dev/null; fi); (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386/Makefile ]; then echo "Configuring libffi for i386"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386 && env CC=" xcrun clang" CFLAGS="-arch i386 " LDFLAGS="-arch i386" "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure --disable-static --with-pic=yes --disable-dependency-tracking --disable-docs --host=i386-apple-darwin > /dev/null; fi); env MACOSX_DEPLOYMENT_TARGET=10.4 /Library/Developer/CommandLineTools/usr/bin/make -C "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386
+/Library/Developer/CommandLineTools/usr/bin/make 'AR_FLAGS=' 'CC_FOR_BUILD=' 'CFLAGS=-arch i386  -Wall -fexceptions' 'CXXFLAGS=-g -O2' 'CFLAGS_FOR_BUILD=' 'CFLAGS_FOR_TARGET=' 'INSTALL=/usr/bin/install -c' 'INSTALL_DATA=/usr/bin/install -c -m 644' 'INSTALL_PROGRAM=/usr/bin/install -c' 'INSTALL_SCRIPT=/usr/bin/install -c' 'JC1FLAGS=' 'LDFLAGS=-arch i386' 'LIBCFLAGS=' 'LIBCFLAGS_FOR_TARGET=' 'MAKE=/Library/Developer/CommandLineTools/usr/bin/make' 'MAKEINFO=/bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/missing makeinfo ' 'PICFLAG=' 'PICFLAG_FOR_TARGET=' 'RUNTESTFLAGS=' 'SHELL=/bin/sh' 'exec_prefix=/usr/local' 'infodir=/usr/local/share/info' 'libdir=/usr/local/lib' 'mandir=/usr/local/share/man' 'prefix=/usr/local' 'AR=ar' 'AS=as' 'CC=xcrun clang' 'CXX=g++' 'LD=/Library/Developer/CommandLineTools/usr/bin/ld' 'NM=nm' 'RANLIB=ranlib' 'DESTDIR=' all-recursive
+Making all in include
+make[3]: Nothing to be done for `all'.
+Making all in testsuite
+make[3]: Nothing to be done for `all'.
+Making all in man
+make[3]: Nothing to be done for `all'.
+make[3]: Nothing to be done for `all-am'.
+mkdir -p "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64; (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure ]; then echo "Running autoreconf for libffi"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi" && /bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/autogen.sh > /dev/null; fi); (if [ ! -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64/Makefile ]; then echo "Configuring libffi for x86_64"; cd "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64 && env CC=" xcrun clang" CFLAGS="-arch x86_64 " LDFLAGS="-arch x86_64" "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi"/configure --disable-static --with-pic=yes --disable-dependency-tracking --disable-docs --host=x86_64-apple-darwin > /dev/null; fi); env MACOSX_DEPLOYMENT_TARGET=10.4 /Library/Developer/CommandLineTools/usr/bin/make -C "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64
+/Library/Developer/CommandLineTools/usr/bin/make 'AR_FLAGS=' 'CC_FOR_BUILD=' 'CFLAGS=-arch x86_64  -Wall -fexceptions' 'CXXFLAGS=-g -O2' 'CFLAGS_FOR_BUILD=' 'CFLAGS_FOR_TARGET=' 'INSTALL=/usr/bin/install -c' 'INSTALL_DATA=/usr/bin/install -c -m 644' 'INSTALL_PROGRAM=/usr/bin/install -c' 'INSTALL_SCRIPT=/usr/bin/install -c' 'JC1FLAGS=' 'LDFLAGS=-arch x86_64' 'LIBCFLAGS=' 'LIBCFLAGS_FOR_TARGET=' 'MAKE=/Library/Developer/CommandLineTools/usr/bin/make' 'MAKEINFO=/bin/sh /Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi/missing makeinfo ' 'PICFLAG=' 'PICFLAG_FOR_TARGET=' 'RUNTESTFLAGS=' 'SHELL=/bin/sh' 'exec_prefix=/usr/local' 'infodir=/usr/local/share/info' 'libdir=/usr/local/lib' 'mandir=/usr/local/share/man' 'prefix=/usr/local' 'AR=ar' 'AS=as' 'CC=xcrun clang' 'CXX=g++' 'LD=/Library/Developer/CommandLineTools/usr/bin/ld' 'NM=nm' 'RANLIB=ranlib' 'DESTDIR=' all-recursive
+Making all in include
+make[3]: Nothing to be done for `all'.
+Making all in testsuite
+make[3]: Nothing to be done for `all'.
+Making all in man
+make[3]: Nothing to be done for `all'.
+make[3]: Nothing to be done for `all-am'.
+# Assemble into a FAT (x86_64, i386, ppc) library
+/usr/bin/libtool -static -o "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi-universal-darwin17"/.libs/libffi_convenience.a \
+	    "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-i386/.libs/libffi_convenience.a "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c"/libffi-x86_64/.libs/libffi_convenience.a
+rm -f "/Users/xiaojiaxin/Work/me/blog/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.25/ext/ffi_c/libffi-universal-darwin17"/include/ffi.h
+compiling Thread.c
+compiling Buffer.c
+compiling DynamicLibrary.c
+compiling Variadic.c
+compiling ffi.c
+compiling Pointer.c
+compiling MemoryPointer.c
+compiling Platform.c
+compiling LongDouble.c
+compiling Function.c
+Function.c:951:17: warning: 'ffi_prep_closure' is deprecated [-Wdeprecated-declarations]
+    ffiStatus = ffi_prep_closure(code, &fnInfo->ffi_cif, callback_invoke, closure);
+                ^
+./libffi-x86_64/include/ffi.h:339:18: note: 'ffi_prep_closure' has been explicitly marked deprecated here
+  __attribute__((deprecated))
+                 ^
+1 warning generated.
+Function.c:951:17: warning: 'ffi_prep_closure' is deprecated [-Wdeprecated-declarations]
+    ffiStatus = ffi_prep_closure(code, &fnInfo->ffi_cif, callback_invoke, closure);
+                ^
+./libffi-i386/include/ffi.h:339:18: note: 'ffi_prep_closure' has been explicitly marked deprecated here
+  __attribute__((deprecated))
+                 ^
+1 warning generated.
+compiling MappedType.c
+compiling Type.c
+compiling Types.c
+compiling StructLayout.c
+compiling DataConverter.c
+compiling ArrayType.c
+compiling StructByReference.c
+compiling LastError.c
+compiling Struct.c
+compiling Call.c
+compiling MethodHandle.c
+compiling AbstractMemory.c
+compiling FunctionInfo.c
+compiling ClosurePool.c
+compiling StructByValue.c
+linking shared-object ffi_c.bundle
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+ld: warning: text-based stub file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.tbd and library file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib are out of sync. Falling back to library file for linking.
+ld: warning: could not create compact unwind for _ffi_closure_win64_inner: non-standard register 4 being saved in prolog
+ld: warning: could not create compact unwind for _ffi_call_unix64: does not use RBP or RSP based frame
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+ld: warning: text-based stub file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.tbd and library file /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib are out of sync. Falling back to library file for linking.
+ld: warning: The i386 architecture is deprecated for macOS (remove from the Xcode build setting: ARCHS)
+ld: warning: could not create compact unwind for _ffi_call_i386: non-standard register 5 being saved in prolog
+ld: warning: could not create compact unwind for _ffi_go_closure_EAX: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_go_closure_ECX: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_i386: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_go_closure_STDCALL: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_REGISTER: register saved more than once (might be shrink wrap)
+ld: warning: could not create compact unwind for _ffi_closure_STDCALL: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_raw_SYSV: does not use EBP or ESP based frame
+ld: warning: could not create compact unwind for _ffi_closure_raw_THISCALL: register saved more than once (might be shrink wrap)
+/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20201031-51715-1p77xh9
