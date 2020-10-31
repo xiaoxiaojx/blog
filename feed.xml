@@ -1,30 +1,449 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>多小凯</title>
+    <description>Front-end Developer.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 31 Oct 2020 17:00:27 +0800</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2020 17:00:27 +0800</lastBuildDate>
+    <generator>Jekyll v3.6.0</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Snowpack 更快的前端构建工具</title>
+        <description>&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;最近对脚手架技术架构的升级改造, 虽然在构建速度方面提升了3+倍, 接入项目的大佬们也都甚为满意, 毕竟还是没能达到秒级的开发体验。想着这算到了 webpack 的瓶颈了, 要去调研更快的打包工具及落地的可能性了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;现状&quot;&gt;现状&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;新的脚手架对 webpack 的构建速度优化简述为以下几点, 后面可以单独展开分享一下&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;多线程&lt;/li&gt;
+  &lt;li&gt;前置构建&lt;/li&gt;
+  &lt;li&gt;多页面动态编译/&lt;a href=&quot;https://github.com/xiaoxiaojx/dynamic-routes-webpack-plugin&quot;&gt;单页多路由动态编译&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;loader缓存/plugin缓存&lt;/li&gt;
+  &lt;li&gt;持久缓存&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;参赛工具&quot;&gt;参赛工具&lt;/h2&gt;
+
+&lt;h3 id=&quot;parcel&quot;&gt;Parcel&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4aed5ca8aa1e4163b663888cf9bc9f68~tplv-k3u1fbpfcp-zoom-1.image&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;其实一直是写 demo 的首选, 说要落地到生产, 没想过 … 官网上宣传的速度只是 webpack 的两倍左右, 加上仅存的三两项目遇到的一些 bug(陆续也转到了 webpack), 算上社区的活跃度，没有实践的动力。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;对 parcel 的评估只是个人的经验, 缺乏数据说明。话说回来即使是稳定且健壮的 parcel 也是达不到我们最初的秒级的开发体验。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;小结-parcel-仍然不适合中大型项目&quot;&gt;小结: parcel 仍然不适合中大型项目。&lt;/h4&gt;
+
+&lt;h3 id=&quot;snowpack&quot;&gt;Snowpack&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/abec98eb1c554e328b807d9a3b684dd8~tplv-k3u1fbpfcp-zoom-1.image&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;终于回到了本次的主题, 为什么说 snowpack 快 ? 它是希望你能写出浏览器直接能运行的代码, 你说它能不快吗 … 当然还是要有理有据, 看看官方解释。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;snowpack-leverages-javascripts-native-module-system-known-as-esm-to-create-a-first-of-its-kind-build-system-that-never-builds-the-same-file-twice-snowpack-pushes-changes-instantly-to-the-browser-saving-you-hours-of-development-time-traditionally-spent-waiting-around-for-your-bundler&quot;&gt;Snowpack leverages JavaScript’s native module system (known as ESM) to create a first-of-its-kind build system that never builds the same file twice. Snowpack pushes changes instantly to the browser, saving you hours of development time traditionally spent waiting around for your bundler.&lt;/h5&gt;
+
+&lt;h4 id=&quot;主要帮我们做了什么&quot;&gt;主要帮我们做了什么&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 1. 把项目依赖的 node_modules 模块通过 rollup 编译成 esm 标准代码输出到 
+build/web_modules 目录
+
+# snowpack/src/commands/dev.ts#297
+
+// 如果是不存在 'package-lock.json' 或者 'yarn.lock'|| 'package-lock.json' 或者 'yarn.lock' 有变化 || 第一次构建 等情况会重新编译
+if (!(await checkLockfileHash(DEV_DEPENDENCIES_DIR)) || !existsSync(dependencyImportMapLoc)) {
+// ...
+}
+
+# 2. 通过 babel 编译 ts, tsx, js, jsx 代码输出到 build/_dist_ 目录(毕竟浏览器跑不了 jsx, ts 代码)
+
+# plugins/plugin-babel/worker.js#4
+
+async function transformFileAsync(path, options) {
+  const {code, map} = await babel.transformFileAsync(path, options);
+  return JSON.stringify({code, map});
+}
+
+// 使用如下文件的 babel 配置
+# app-scripts-react/babel.config.json
+
+// 实践证明 @babel/preset-typescript 坑不少, 老项目上线几个白屏几个
+{
+  &quot;presets&quot;: [[&quot;@babel/preset-react&quot;], &quot;@babel/preset-typescript&quot;],
+  &quot;plugins&quot;: [&quot;@babel/plugin-syntax-import-meta&quot;],
+  &quot;env&quot;: {
+    &quot;development&quot;: {
+      &quot;plugins&quot;: [
+        &quot;react-refresh/babel&quot;
+      ]
+    }
+  }
+}
+
+# 3. 开发环境启动一个 devServer
+
+# snowpack/src/commands/dev.ts#875
+
+const server = createServer((req, res) =&amp;gt; {
+// ...
+})
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;demo-目录结构对比&quot;&gt;demo 目录结构对比&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;➜  new-dir tree src
+src
+├── App.css
+├── App.jsx
+├── App.test.jsx
+├── index.css
+├── index.jsx
+├── logo.svg
+└── test.css
+
+➜  new-dir tree build
+build
+├── __snowpack__
+│   └── env.js
+├── _dist_
+│   ├── App.css
+│   ├── App.js
+│   ├── index.css
+│   ├── index.css.proxy.js
+│   ├── index.js
+│   ├── logo.svg
+│   ├── logo.svg.proxy.js
+│   └── test.css
+├── favicon.ico
+├── index.html
+├── robots.txt
+└── web_modules
+    ├── import-map.json
+    └── react-dom.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;发现的一些问题&quot;&gt;发现的一些问题&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;源码可能会被篡改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# plugins/plugin-babel/plugin.js#42
+
+code = code.replace(/process\.env/g, 'import.meta.env');
+
+// 会造成如下问题
+
+// src
+function getEnvLabel() {
+ return 'process.env.NODE_ENV'
+}
+// dist
+function getEnvLabel() {
+ return 'import.meta.env'
+}
+
+// enum ....
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;css 文件 @import 另一个 css 文件不会处理
+    &lt;blockquote&gt;
+      &lt;p&gt;没有进行 ast 语法分析, 你只能在 js 文件里面 import, 也许你想着帮忙一起完善这块, 到了日趋完善的一天发现之前不就有一个成熟的 webpack 为何不用 ? 这 …&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;….&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;小结&quot;&gt;小结&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;现在的 snowpack 还是希望你能写出浏览器直接能运行的代码, 对于新小项目开发环境可尝试, 其他还是先等一等 …&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Tue, 29 Sep 2020 14:32:24 +0800</pubDate>
+        <link>http://localhost:4000/2020/09/snowpack/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/09/snowpack/</guid>
+        
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>React, TypeScript 写游戏探索</title>
+        <description>&lt;h3 id=&quot;简单介绍&quot;&gt;简单介绍&lt;/h3&gt;
+&lt;h4 id=&quot;游戏按键如下图&quot;&gt;游戏按键如下图&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/80/v2-1c2f1967b8bb694a8c2fc0083d73d3ea_hd.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;顶这个墙出现蘑菇-此蘑菇接了才可以发子弹&quot;&gt;顶这个墙出现蘑菇, 此蘑菇接了才可以发子弹&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/80/v2-b0397d7642f871fe3bc1f197f9edd6fd_hd.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;react-写游戏的一些心得&quot;&gt;React 写游戏的一些心得&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://d3hp955ol7sp5f.cloudfront.net/ReactJSstatic/images/webpack/b736f282b84b3f116be4319681af8b94.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-react的优势&quot;&gt;1. React的优势&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;数据驱动&lt;/strong&gt;, 根据state或者props的变化 =&amp;gt; 视图的变化, 以前的方式往往是直接操作 DOM 实现, 触发某事件使得元素移动代码类似如:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    moveRight() {
+        this.left += 8;
+        this.draw();
+    }
+
+    draw() {
+        if(this.ele === null){
+            this.ele = document.createElement('img');
+            this.ele.src = this.url;
+            this.ele.style.width = this.width + 'px';
+            this.ele.style.height = this.height + 'px';
+            this.ele.style.position = 'absolute';
+            app.appendChild(this.ele);
+        }
+        this.ele.style.left = this.left + 'px';
+        this.ele.style.top = this.top + 'px';
+    };
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;现在就友好很多&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    moveRight() {
+        this.setState( preState =&amp;gt; (
+            {
+                left: preState.left + 8
+            }
+        ));
+    }
+
+    &amp;lt;ContraBG
+        left={left}
+        top={top}
+        status={status}
+        toward={toward}&amp;gt;
+    &amp;lt;/ContraBG&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;结构更清晰&lt;/strong&gt;, 逐个书写需要渲染的组件, 能让人一目了然的知道游戏运行中加载的组件, 老的方式代码风格去渲染一个元素如&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    const contra = new Contra();
+    const bulletsMap = new BulletsMap();
+    const enemiesMap = new EnemiesMap();
+    contra.draw();
+    bulletsMap.draw();
+    enemiesMap.draw();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果渲染的多了结构复杂了,阅读就会十分困难。现在的代码风格就能够一目了然的看到所有运行的组件&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;=&amp;gt;
+    @observer
+    class InGame extends React.PureComponent&amp;lt;InGameProps, {}&amp;gt; {
+        render() {
+            const { store } = this.props;
+    
+            return (
+                &amp;lt;InGameBG   // 包裹组件负责渲染背景变化相关
+                        store={store}&amp;gt;
+                        &amp;lt;Contra // 玩家控制的角色组件
+                            store={store}/&amp;gt;
+                        &amp;lt;BulletsMap // 负责渲染子弹
+                            store={store}/&amp;gt;
+                        &amp;lt;EnemiesMap // 负责渲染敌方角色
+                            store={store}/&amp;gt;
+                &amp;lt;/InGameBG&amp;gt;
+            );
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-react的劣势&quot;&gt;2. React的劣势&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;前者类与类之间继承会灵活很多, 如&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    飞机继承至飞行物 =&amp;gt; 飞行物继承至动态物 =&amp;gt; 动态物继承至某一特性物体
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;React 不推崇继承, 可采用组合, HOC高阶组件思想去渲染一系列具有相似性质的组件。如超级玛丽游戏中有许多的墙,它们具有相似的渲染逻辑,以及一些都会需要用到的方法, 可以通过写一个静态方块的高阶组件去生成, 能够更高效的管理代码。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    function WithStaticSquare&amp;lt;TOwnProps&amp;gt;(options: StaticSquareOption):ComponentDecorator&amp;lt;TOwnProps&amp;gt; {
+        return Component =&amp;gt;
+            class HocSquare extends React.Component&amp;lt;TOwnProps, HocSquareState&amp;gt; {
+                // xxx
+                render() {
+                    const { styles, className } = this.state;
+                    const passThroughProps: any = this.props;
+                    const classNames = className ? `staticHocWrap ${className}` : &quot;staticHocWrap&quot;;
+    
+    
+                    const staticProps: WrappedStaticSquareUtils = {
+                        changeBackground: this.changeBackground,
+                        toTopAnimate: this.toTopAnimate
+                    };  // 提供一些可能会用到的改变背景图的方法以及被撞时调用向上动画的方法
+    
+                    return (
+                        &amp;lt;div
+                            className={classNames}
+                            style={styles}&amp;gt;
+                            &amp;lt;Component
+                                hoc={staticProps}
+                                {...passThroughProps}/&amp;gt;
+                        &amp;lt;/div&amp;gt;
+                    );
+                }
+            }
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-性能问题&quot;&gt;3. 性能问题&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;避免卡顿&lt;/strong&gt; 前者直接操作某个DOM渲染不会有太多卡顿现象发生
+React使用Mobx, Redux等进行整个游戏数据控制时, 如果不对渲染进行优化, 当store某个属性值变化导致所有接入props的组件都重新渲染一次代价是巨大的!
+    &lt;ol&gt;
+      &lt;li&gt;采用 PureComponent 或者为 Component 加入 shouldComponentUpdate&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    class Square extends React.PureComponent&amp;lt;SquareProps, {}&amp;gt; {
+        // xxx
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;其中就需要了解PureComponent。React.PureComponent是2016.06.29 React 15.3中发布。&lt;img src=&quot;http://p5.qhimg.com/t0131e05b31c1284209.gif&quot; alt=&quot;image&quot; /&gt;
+PureComponent改变了生命周期方法shouldComponentUpdate，并且它会自动检查组件是否需要重新渲染。这时，只有PureComponent检测到state或者props发生变化时，PureComponent才会调用render方法,但是这种检查只是浅计较这就意味着嵌套对象和数组是不会被比较的&lt;a href=&quot;https://60devs.com/pure-component-in-react.html&quot;&gt;更多信息&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;多采用组件去渲染, 对比两种方法&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    // 方法1.
+    &amp;lt;InGameBG   // 包裹组件负责渲染背景变化相关
+            store={store}&amp;gt;
+            &amp;lt;Contra // 玩家控制的角色组件
+                store={store}/&amp;gt;
+            &amp;lt;BulletsMap // 负责渲染子弹
+                store={store}/&amp;gt;
+            &amp;lt;EnemiesMap // 负责渲染敌方角色
+                store={store}/&amp;gt;
+    &amp;lt;/InGameBG&amp;gt;
+    //方法2.
+    &amp;lt;InGameBG
+        store={store}&amp;gt;
+            &amp;lt;Contra
+                store={store}/&amp;gt;
+            &amp;lt;div&amp;gt;
+                {
+                    bulletMap.map((bullet, index) =&amp;gt; {
+                    if ( bullet ) {
+                        return (
+                            &amp;lt;Bullet
+                                key={`Bullet-${index}`}
+                                {...bullet}
+                                index={index}
+                                store={store}/&amp;gt;
+                        );
+                    }
+                    return null;
+                })
+                }
+            &amp;lt;/div&amp;gt;
+            &amp;lt;EnemiesMap
+                store={store}/&amp;gt;
+    &amp;lt;/InGameBG&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这两种方法的区别就是在于渲染子弹是否通过组件渲染还是在父组件中直接渲染, 其中方法2的性能会有很大的问题, 当某个子弹变化时使得最大的容器重新渲染, 其中所有子组件也会去判断是否需要重新渲染，使得界面会出现卡顿。而方法1则只会在发生数据变化的子弹去渲染。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;getLazyLoadMap 对地图的实时切割渲染(非常重要!!!)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const LIMIT: number = 16;
+const GAME_WIDTH: number = 512;
+
+@observer
+class SquaresMap extends React.PureComponent&amp;lt;SquaresMapProps, {}&amp;gt; {
+    getLazyLoadMap() {
+        const { staticSquareMap, inGameGBLeft } = this.props.store;
+        const OFFSET = Math.abs(inGameGBLeft) / GAME_WIDTH * LIMIT;
+        return staticSquareMap.reduce((preVal, currentVal) =&amp;gt; {
+            const items = [...currentVal];
+            const current = items.splice(OFFSET, LIMIT);
+            preVal.push(current);
+            return preVal;
+        }, [] as StaticSquareManagementType[][]);
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-需要注意的点&quot;&gt;4. 需要注意的点&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;及时移除监听&lt;/strong&gt;, 在组件卸载时需要移除该组件的事件监听, 时间函数等。如游戏开始组件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    class GameStart extends React.Component&amp;lt;GameStartProps, {}&amp;gt; {
+        constructor(props) {
+            super(props);
+    
+            this.onkeydownHandle = this.onkeydownHandle.bind(this);
+        }
+        componentDidMount() {
+            this.onkeydown();
+        }
+        componentWillUnmount() {
+            this.destroy();
+        }
+        destroy(): void {
+            console.log(&quot;游戏开始! GameStart Component destroy ....&quot;);
+            window.removeEventListener(&quot;keydown&quot;, this.onkeydownHandle);
+        }
+        onkeydownHandle(e: KeyboardEvent): void {
+            const keyCode: KeyCodeType = e.keyCode;
+            const {  store } = this.props;
+            const { updateGameStatus } = store;
+            switch ( keyCode ) {
+                case 72:
+                    updateGameStatus(1);
+                    break;
+            }
+        }
+        onkeydown(): void {
+            window.addEventListener(&quot;keydown&quot;, this.onkeydownHandle);
+        }
+        render() {
+            return (
+                &amp;lt;div className=&quot;gameStartWrap&quot;&amp;gt;
+                &amp;lt;/div&amp;gt;
+            );
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 30 Aug 2017 14:32:24 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/super-contra/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/super-contra/</guid>
+        
+        
+      </item>
+    
   </channel>
 </rss>

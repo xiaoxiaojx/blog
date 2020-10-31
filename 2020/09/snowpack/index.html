@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Snowpack 更快的前端构建工具</title>
+  <meta name="description" content="背景  最近对脚手架技术架构的升级改造, 虽然在构建速度方面提升了3+倍, 接入项目的大佬们也都甚为满意, 毕竟还是没能达到秒级的开发体验。想着这算到了 webpack 的瓶颈了, 要去调研更快的打包工具及落地的可能性了。">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Snowpack 更快的前端构建工具">
+  <meta name="twitter:description" content="背景  最近对脚手架技术架构的升级改造, 虽然在构建速度方面提升了3+倍, 接入项目的大佬们也都甚为满意, 毕竟还是没能达到秒级的开发体验。想着这算到了 webpack 的瓶颈了, 要去调研更快的打包工具及落地的可能性了。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Snowpack 更快的前端构建工具">
+  <meta property="og:description" content="背景  最近对脚手架技术架构的升级改造, 虽然在构建速度方面提升了3+倍, 接入项目的大佬们也都甚为满意, 毕竟还是没能达到秒级的开发体验。想着这算到了 webpack 的瓶颈了, 要去调研更快的打包工具及落地的可能性了。">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="https://xiaoxiaojx.github.io/resume/static/image/dog.ico" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2020/09/snowpack/">
+  <link rel="alternate" type="application/rss+xml" title="多小凯" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 多小凯 的主页" class="blog-button"><img src="https://avatars1.githubusercontent.com/u/23253540?s=460&u=1a699410e92dbb87858a7e7fae5a429810469e04&v=4" width="80" alt="多小凯 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 多小凯" class="blog-button">多小凯</a></h1>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Front-end Developer.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">Blog</a></li>
+                
+                  <li class="navigation__item"><a href="https://xiaoxiaojx.github.io/resume/" target="_blank" title="My Resume">Resume</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/xiaoxiaojx" title="@xiaoxiaojx 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/xiaoxiaojx" title="@xiaoxiaojx 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/xiaoxiaojx" title="@xiaoxiaojx" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Google Plus -->
+  <li class="navigation__item">
+    <a href="https://plus.google.com/107108267983477358170" rel="author" title="Google+" target="_blank">
+      <i class='social fa fa-google-plus-square'></i>
+      <span class="label">Google Plus</span>
+    </a>
+  </li>
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:784487301@qq.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2020-09-29 14:32:24 +0800" itemprop="datePublished" class="post-meta__date date">2020-09-29</time> &#8226; <span class="post-meta__tags tags"></span>
+    </div>
+    <h1 class="post-title">Snowpack 更快的前端构建工具</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="背景">背景</h2>
+<blockquote>
+  <p>最近对脚手架技术架构的升级改造, 虽然在构建速度方面提升了3+倍, 接入项目的大佬们也都甚为满意, 毕竟还是没能达到秒级的开发体验。想着这算到了 webpack 的瓶颈了, 要去调研更快的打包工具及落地的可能性了。</p>
+</blockquote>
+
+<h2 id="现状">现状</h2>
+<blockquote>
+  <p>新的脚手架对 webpack 的构建速度优化简述为以下几点, 后面可以单独展开分享一下</p>
+</blockquote>
+
+<ol>
+  <li>多线程</li>
+  <li>前置构建</li>
+  <li>多页面动态编译/<a href="https://github.com/xiaoxiaojx/dynamic-routes-webpack-plugin">单页多路由动态编译</a></li>
+  <li>loader缓存/plugin缓存</li>
+  <li>持久缓存</li>
+</ol>
+
+<h2 id="参赛工具">参赛工具</h2>
+
+<h3 id="parcel">Parcel</h3>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4aed5ca8aa1e4163b663888cf9bc9f68~tplv-k3u1fbpfcp-zoom-1.image" alt="" /></p>
+<blockquote>
+  <p>其实一直是写 demo 的首选, 说要落地到生产, 没想过 … 官网上宣传的速度只是 webpack 的两倍左右, 加上仅存的三两项目遇到的一些 bug(陆续也转到了 webpack), 算上社区的活跃度，没有实践的动力。</p>
+</blockquote>
+
+<blockquote>
+  <p>对 parcel 的评估只是个人的经验, 缺乏数据说明。话说回来即使是稳定且健壮的 parcel 也是达不到我们最初的秒级的开发体验。</p>
+</blockquote>
+
+<h4 id="小结-parcel-仍然不适合中大型项目">小结: parcel 仍然不适合中大型项目。</h4>
+
+<h3 id="snowpack">Snowpack</h3>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/abec98eb1c554e328b807d9a3b684dd8~tplv-k3u1fbpfcp-zoom-1.image" alt="" /></p>
+<blockquote>
+  <p>终于回到了本次的主题, 为什么说 snowpack 快 ? 它是希望你能写出浏览器直接能运行的代码, 你说它能不快吗 … 当然还是要有理有据, 看看官方解释。</p>
+</blockquote>
+
+<h5 id="snowpack-leverages-javascripts-native-module-system-known-as-esm-to-create-a-first-of-its-kind-build-system-that-never-builds-the-same-file-twice-snowpack-pushes-changes-instantly-to-the-browser-saving-you-hours-of-development-time-traditionally-spent-waiting-around-for-your-bundler">Snowpack leverages JavaScript’s native module system (known as ESM) to create a first-of-its-kind build system that never builds the same file twice. Snowpack pushes changes instantly to the browser, saving you hours of development time traditionally spent waiting around for your bundler.</h5>
+
+<h4 id="主要帮我们做了什么">主要帮我们做了什么</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 1. 把项目依赖的 node_modules 模块通过 rollup 编译成 esm 标准代码输出到 
+build/web_modules 目录
+
+# snowpack/src/commands/dev.ts#297
+
+// 如果是不存在 'package-lock.json' 或者 'yarn.lock'|| 'package-lock.json' 或者 'yarn.lock' 有变化 || 第一次构建 等情况会重新编译
+if (!(await checkLockfileHash(DEV_DEPENDENCIES_DIR)) || !existsSync(dependencyImportMapLoc)) {
+// ...
+}
+
+# 2. 通过 babel 编译 ts, tsx, js, jsx 代码输出到 build/_dist_ 目录(毕竟浏览器跑不了 jsx, ts 代码)
+
+# plugins/plugin-babel/worker.js#4
+
+async function transformFileAsync(path, options) {
+  const {code, map} = await babel.transformFileAsync(path, options);
+  return JSON.stringify({code, map});
+}
+
+// 使用如下文件的 babel 配置
+# app-scripts-react/babel.config.json
+
+// 实践证明 @babel/preset-typescript 坑不少, 老项目上线几个白屏几个
+{
+  "presets": [["@babel/preset-react"], "@babel/preset-typescript"],
+  "plugins": ["@babel/plugin-syntax-import-meta"],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-refresh/babel"
+      ]
+    }
+  }
+}
+
+# 3. 开发环境启动一个 devServer
+
+# snowpack/src/commands/dev.ts#875
+
+const server = createServer((req, res) =&gt; {
+// ...
+})
+
+</code></pre></div></div>
+
+<h4 id="demo-目录结构对比">demo 目录结构对比</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  new-dir tree src
+src
+├── App.css
+├── App.jsx
+├── App.test.jsx
+├── index.css
+├── index.jsx
+├── logo.svg
+└── test.css
+
+➜  new-dir tree build
+build
+├── __snowpack__
+│   └── env.js
+├── _dist_
+│   ├── App.css
+│   ├── App.js
+│   ├── index.css
+│   ├── index.css.proxy.js
+│   ├── index.js
+│   ├── logo.svg
+│   ├── logo.svg.proxy.js
+│   └── test.css
+├── favicon.ico
+├── index.html
+├── robots.txt
+└── web_modules
+    ├── import-map.json
+    └── react-dom.js
+</code></pre></div></div>
+
+<h4 id="发现的一些问题">发现的一些问题</h4>
+<ol>
+  <li>源码可能会被篡改</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># plugins/plugin-babel/plugin.js#42
+
+code = code.replace(/process\.env/g, 'import.meta.env');
+
+// 会造成如下问题
+
+// src
+function getEnvLabel() {
+ return 'process.env.NODE_ENV'
+}
+// dist
+function getEnvLabel() {
+ return 'import.meta.env'
+}
+
+// enum ....
+</code></pre></div></div>
+
+<ol>
+  <li>css 文件 @import 另一个 css 文件不会处理
+    <blockquote>
+      <p>没有进行 ast 语法分析, 你只能在 js 文件里面 import, 也许你想着帮忙一起完善这块, 到了日趋完善的一天发现之前不就有一个成熟的 webpack 为何不用 ? 这 …</p>
+    </blockquote>
+  </li>
+  <li>….</li>
+</ol>
+
+<h4 id="小结">小结</h4>
+<blockquote>
+  <p>现在的 snowpack 还是希望你能写出浏览器直接能运行的代码, 对于新小项目开发环境可尝试, 其他还是先等一等 …</p>
+</blockquote>
+
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/08/super-contra/" title="link to React, TypeScript 写游戏探索">React, TypeScript 写游戏探索</a></h2>
+       <p class="excerpt">简单介绍游戏按键如下图顶这个墙出现蘑菇, 此蘑菇接了才可以发子弹React 写游戏的一些心得1. React的优势  数据驱动, 根据state或者props的变化 =&gt; 视图的变化, 以前的方式往往是直接操作 DOM 实现, 触发某事件使得元素移动代码类似如:    moveRight() {        this.left += 8;        this.draw();    }    draw() {        if(this.ele === null){      ...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-08-30 14:32:24 +0800" class="post-list__meta--date date">2017-08-30</time> &#8226; <span class="post-list__meta--tags tags"></span><a class="btn-border-small" href=/2017/08/super-contra/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2020/09/snowpack/";
+        this.page.identifier = "/2020/09/snowpack/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2020-10-31 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
+        <span class="footer__copyright">本站由 <a href="http://onev.cat">@onevcat</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2020</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

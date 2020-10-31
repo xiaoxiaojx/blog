@@ -30,3 +30,7 @@ Temporary Items
 
 # debug file
 _site
+
+.sass-cache
+
+.bundle
