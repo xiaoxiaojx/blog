@@ -34,3 +34,5 @@ _site
 .sass-cache
 
 .bundle
+
+_includes/

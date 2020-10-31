@@ -169,8 +169,8 @@ function getEnvLabel() {
 
 </description>
         <pubDate>Tue, 29 Sep 2020 14:32:24 +0800</pubDate>
-        <link>http://localhost:4000/2020/09/snowpack/</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/09/snowpack/</guid>
+        <link>http://localhost:4000https://xiaoxiaojx.github.io/blog/2020/09/snowpack/</link>
+        <guid isPermaLink="true">http://localhost:4000https://xiaoxiaojx.github.io/blog/2020/09/snowpack/</guid>
         
         
       </item>
@@ -439,8 +439,8 @@ class SquaresMap extends React.PureComponent&amp;lt;SquaresMapProps, {}&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 30 Aug 2017 14:32:24 +0800</pubDate>
-        <link>http://localhost:4000/2017/08/super-contra/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/08/super-contra/</guid>
+        <link>http://localhost:4000https://xiaoxiaojx.github.io/blog/2017/08/super-contra/</link>
+        <guid isPermaLink="true">http://localhost:4000https://xiaoxiaojx.github.io/blog/2017/08/super-contra/</guid>
         
         
       </item>
