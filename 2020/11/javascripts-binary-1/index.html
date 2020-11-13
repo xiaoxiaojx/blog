@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>JavaScript 二进制 (上篇)</title>
+  <meta name="description" content="前情提要  在 JavaScript 处理二进制数据方面上常接触的只有 Node 读写文件的 Buffer 对象, 脑海中只知道 ES6 也有 ArrayBuffer 相关的二进制处理的对象, 具体两者之间有何关系及 ArrayBuffer 的相关知识, 进阶用法都算是知识盲区了, 所以打算这次好好梳理学习一下,...">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JavaScript 二进制 (上篇)">
+  <meta name="twitter:description" content="前情提要  在 JavaScript 处理二进制数据方面上常接触的只有 Node 读写文件的 Buffer 对象, 脑海中只知道 ES6 也有 ArrayBuffer 相关的二进制处理的对象, 具体两者之间有何关系及 ArrayBuffer 的相关知识, 进阶用法都算是知识盲区了, 所以打算这次好好梳理学习一下,...">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="JavaScript 二进制 (上篇)">
+  <meta property="og:description" content="前情提要  在 JavaScript 处理二进制数据方面上常接触的只有 Node 读写文件的 Buffer 对象, 脑海中只知道 ES6 也有 ArrayBuffer 相关的二进制处理的对象, 具体两者之间有何关系及 ArrayBuffer 的相关知识, 进阶用法都算是知识盲区了, 所以打算这次好好梳理学习一下,...">
+  
+  <link rel="icon" type="image/png" href="https://xiaoxiaojx.github.io/blog/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="https://xiaoxiaojx.github.io/resume/static/image/dog.ico" type="image/x-icon">
+  
+  <link rel="stylesheet" href="https://xiaoxiaojx.github.io/blog/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2020/11/javascripts-binary-1/">
+  <link rel="alternate" type="application/rss+xml" title="多小凯" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="https://xiaoxiaojx.github.io/blog/index.html#blog" title="前往 多小凯 的主页" class="blog-button"><img src="https://avatars1.githubusercontent.com/u/23253540?s=460&u=1a699410e92dbb87858a7e7fae5a429810469e04&v=4" width="80" alt="多小凯 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="https://xiaoxiaojx.github.io/blog/index.html#blog" title="link to homepage for 多小凯" class="blog-button">多小凯</a></h1>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Front-end Developer.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="https://xiaoxiaojx.github.io/blog/index.html#blog" title="Visit blog" class="blog-button">Blog</a></li>
+                
+                  <li class="navigation__item"><a href="https://xiaoxiaojx.github.io/resume/" target="_blank" title="My Resume">Resume</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/xiaoxiaojx" title="@xiaoxiaojx 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/xiaoxiaojx/blog/issues" title="@xiaoxiaojx/blog/issues 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/xiaoxiaojx" title="@xiaoxiaojx" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Google Plus -->
+  <li class="navigation__item">
+    <a href="https://plus.google.com/107108267983477358170" rel="author" title="Google+" target="_blank">
+      <i class='social fa fa-google-plus-square'></i>
+      <span class="label">Google Plus</span>
+    </a>
+  </li>
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:784487301@qq.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2020-11-04 14:32:24 +0800" itemprop="datePublished" class="post-meta__date date">2020-11-04</time> &#8226; <span class="post-meta__tags tags"></span>
+    </div>
+    <h1 class="post-title">JavaScript 二进制 (上篇)</h1>
+  </header>
+
+  <section class="post">
+    <h3 id="前情提要">前情提要</h3>
+<blockquote>
+  <p>在 JavaScript 处理二进制数据方面上常接触的只有 Node 读写文件的 Buffer 对象, 脑海中只知道 ES6 也有 ArrayBuffer 相关的二进制处理的对象, 具体两者之间有何关系及 ArrayBuffer 的相关知识, 进阶用法都算是知识盲区了, 所以打算这次好好梳理学习一下, 顺便写个博客记录。</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 扫盲之前 😂
+type ArrayBuffer = Array&lt;Buffer&gt;
+</code></pre></div></div>
+
+<h3 id="arraybuffer">ArrayBuffer</h3>
+<blockquote>
+  <p>2011 年 2 月发布 ArrayBuffer 对象、TypedArray 视图和 DataView 视图是 JavaScript 操作二进制数据的接口。让 JavaScript 有了操作二进制的能力, 后面 ES6 将它们纳入了 ECMAScript 规格，并且增加了新的方法。它们都是以数组的语法处理二进制数据，所以统称为二进制数组。了解更多阅读 <a href="https://es6.ruanyifeng.com/#docs/arraybuffer#">ECMAScript 6 入门 ArrayBuffer</a>。</p>
+</blockquote>
+
+<h4 id="知识摘要">知识摘要</h4>
+<ol>
+  <li>
+    <p>ArrayBuffer对象：代表内存之中的一段二进制数据，可以通过“视图”进行操作。“视图”部署了数组接口，这意味着，可以用数组的方法操作内存。</p>
+  </li>
+  <li>
+    <p>TypedArray视图：共包括 9 种类型的视图，比如Uint8Array（无符号 8 位整数）数组视图, Int16Array（16 位整数）数组视图, Float32Array（32 位浮点数）数组视图等等。</p>
+  </li>
+  <li>
+    <p>DataView视图：可以自定义复合格式的视图，比如第一个字节是 Uint8（无符号 8 位整数）、第二、三个字节是 Int16（16 位整数）、第四个字节开始是 Float32（32 位浮点数）等等，此外还可以自定义字节序。</p>
+  </li>
+</ol>
+
+<h4 id="使用的例子">使用的例子</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// TypedArray 视图
+const buffer = new ArrayBuffer(12);
+const x1 = new Int32Array(buffer);
+x1[0] = 1;
+
+// DataView 视图
+const buf = new ArrayBuffer(32);
+const dataView = new DataView(buf);
+dataView.getUint8(0) // 0
+</code></pre></div></div>
+
+<h4 id="小结">小结</h4>
+<blockquote>
+  <p>DataView 自定义复合格式的视图的接口更像 Buffer, 或许 Buffer 是基于此实现, 如下可以看看接口对比</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 阅读完基础知识后 🤔
+DataView == Buffer ?
+
+// DataView 接口列表
+- getInt8：读取 1 个字节，返回一个 8 位整数。
+- getUint8：读取 1 个字节，返回一个无符号的 8 位整数。
+- getInt16：读取 2 个字节，返回一个 16 位整数。
+- getUint16：读取 2 个字节，返回一个无符号的 16 位整数。
+- getInt32：读取 4 个字节，返回一个 32 位整数。
+- getUint32：读取 4 个字节，返回一个无符号的 32 位整数。
+- getFloat32：读取 4 个字节，返回一个 32 位浮点数。
+- getFloat64：读取 8 个字节，返回一个 64 位浮点数。
+
+- setInt8：写入 1 个字节的 8 位整数。
+- setUint8：写入 1 个字节的 8 位无符号整数。
+- setInt16：写入 2 个字节的 16 位整数。
+
+// Buffer 接口列表
+- buf.readDoubleBE([offset])
+- buf.readDoubleLE([offset])
+- buf.readFloatBE([offset])
+- buf.readFloatLE([offset])
+- buf.readInt8([offset])
+- buf.readInt16BE([offset])
+- buf.readInt16LE([offset])
+- buf.readInt32BE([offset])
+- buf.readInt32LE([offset])
+- buf.readIntBE(offset, byteLength)
+- buf.readIntLE(offset, byteLength)
+- buf.readUInt8([offset])
+- ...
+
+- buf.writeDoubleBE(value[, offset])
+- buf.writeDoubleLE(value[, offset])
+- buf.writeFloatBE(value[, offset])
+- ...
+</code></pre></div></div>
+
+<h3 id="buffer">Buffer</h3>
+<h4 id="代码实现">代码实现</h4>
+<blockquote>
+  <p>那么我们可以瞧瞧 Buffer 的代码实现了, Buffer 对象由 Buffer.form 构造而成，注意通过 new 关键字构造用法已经废弃, 以下代码基于 <a href="https://github.com/nodejs/node">nodejs/node</a>, version: 564fcb8</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// lib/buffer.js#290
+
+Buffer.from = function from(value, encodingOrOffset, length) {
+  if (typeof value === 'string')
+    return fromString(value, encodingOrOffset);
+
+  if (typeof value === 'object' &amp;&amp; value !== null) {
+    if (isAnyArrayBuffer(value))
+      return fromArrayBuffer(value, encodingOrOffset, length);
+   
+   ...   
+}
+</code></pre></div></div>
+
+<blockquote>
+  <p>简化下来发现工厂模式 Buffer.from 方法最终都是返回了一个 FastBuffer 实例</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Buffer.from(str[, encoding]) -&gt; fromString -&gt; new FastBuffer()
+Buffer.from(arrayBuffer[, byteOffset[, length]]) -&gt; fromArrayBuffer -&gt; new FastBuffer()
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 真相大白后 😱
+👇 Buffer 尽然是 Uint8Array（无符号 8 位整数）数组视图 👇
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// lib/internal/buffer.js#952
+class FastBuffer extends Uint8Array {}
+</code></pre></div></div>
+
+<blockquote>
+  <p>那么 Uint8Array 的 Buffer 是如何实现读写其他 Int16， Uint16, Float32, Float64 接口 ? 去瞧瞧 
+buf.writeUInt16BE 的实现吧</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// lib/internal/buffer.js#828
+function writeU_Int16BE(buf, value, offset, min, max) {
+  value = +value;
+  checkInt(value, min, max, buf, offset, 1);
+
+  buf[offset++] = (value &gt;&gt;&gt; 8); // 按位操作符
+  buf[offset++] = value;
+  return offset;
+}
+
+function writeUInt16BE(value, offset = 0) {
+  return writeU_Int16BE(this, value, offset, 0, 0xffff);
+}
+</code></pre></div></div>
+
+<blockquote>
+  <p>这里先简单回顾一下 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">JavaScript 按位操作符</a>, 如上 value »&gt; 8 是向右移了 8位, 我们可以看看下面数字9(十进制)向右移到两位的例子</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     9 (base 10): 00000000000000000000000000001001 (base 2)
+                  --------------------------------
+9 &gt;&gt;&gt; 2 (base 10): 00000000000000000000000000000010 (base 2) = 2 (base 10)
+</code></pre></div></div>
+
+<blockquote>
+  <p>回到 writeU_Int16BE，原来是写 16 位时, 会通过占用 2 个字节的形式各存储 8 位, 举个例子, 如 16 位的 1000000000000000(32768), 如上的代码第一个字节存储的是向右移了 8 位的 10000000(128), 第二个字节直接赋值给 1000000000000000, 第二个字节超出了 8 位怎么办 ? 超出会截掉头部 ?</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const b = new ArrayBuffer(2)
+
+const v = new Uint8Array(b)
+undefined
+v[0] = 128
+128
+v[1] = 32768
+32768
+v
+Uint8Array(2) [128, 0]
+</code></pre></div></div>
+
+<blockquote>
+  <p>如上的代码运算也验证了猜想, 第二个字节头部超出的 8 位被截掉了。 原来 Buffer 实现的其他位数操作接口都是被修饰抹平后的。</p>
+</blockquote>
+
+<h4 id="字节序">字节序</h4>
+<blockquote>
+  <p>仔细发现 Buffer 比 DataView 多了一些接口, 比如有 <strong><em>字节序</em></strong> 的概念, 如 buf.writeInt32BE, buf.writeInt32LE, DataView 只有 setInt32</p>
+</blockquote>
+
+<blockquote>
+  <p>计算机硬件有两种储存数据的方式：大端字节序（big endian）和小端字节序（little endian）。
+举例来说，数值0x2211使用两个字节储存：高位字节是0x22，低位字节是0x11。</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>大端字节序：高位字节在前，低位字节在后，这是人类读写数值的方法。
+小端字节序：低位字节在前，高位字节在后，即以0x1122形式储存。
+</code></pre></div></div>
+
+<blockquote>
+  <p>我的理解是用高字节写就用高字节读, 低字节写就用高低字节读就行, 不然存储的 AB, 读出来的是 BA 。了解更多阅读 <a href="http://www.ruanyifeng.com/blog/2016/11/byte-order.html">理解字节序</a>。</p>
+</blockquote>
+
+<h3 id="使用场景">使用场景</h3>
+<blockquote>
+  <p>在浏览器端操作二进制会比较少见, 这不 Webpack v5 发布不久, 这里还是讲讲 Node 上的实践, 其中 Webpack v5 的 <strong><em>本地持久缓存</em></strong> 功能里二进制相关的操作是可以好好学一下的。</p>
+</blockquote>
+
+<blockquote>
+  <p>如何通俗的解释这个功能点了? 大家知道首次编译后, 修改代码后再次的编译耗时是非常短的, 这是 MemoryCachePlugin 的功能, 它能在编译后把需要都数据都缓存在内存中, 接下来的编译当文件的时间戳没有变化都是直接返回上一次的运行结果。在一个运行时里面往内存读取数据还是比较简单的, 内存缓存相关的这一点就细不说了。</p>
+</blockquote>
+
+<blockquote>
+  <p>那么如何理解 IdleFileCachePlugin 实现的持久缓存功能? 简单说就是把本次的编译的数据写入文件中, 当本次编译结束进程退出, 后面重新 npm start 的时候在会从缓存文件中把各个模块上次编译结果读取出来以此来减少大量的编译时间。</p>
+</blockquote>
+
+<blockquote>
+  <p>大量的文件操作当然是直接操作二进制比较快, 对于 JavaScript 的 5 种基本数据类型 Undefined、Null、Boolean、Number、String 以及复杂的数据类型 Object 的序列化与反序列化, 代码压缩等 Webpack 做的各种策略还是能好好讲解一下的。</p>
+</blockquote>
+
+<blockquote>
+  <p>这部分的代码讲解就放在下一篇文章吧 …</p>
+</blockquote>
+
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1605297615876&amp;di=a8600be2381d57666a014d9b63692976&amp;imgtype=0&amp;src=http%3A%2F%2Fpic4.zhimg.com%2F50%2Fv2-48f30f9964e3207b7c45aa54428e803b_hd.jpg" alt="下次见～" /></p>
+
+<blockquote>
+  <p>关于本篇文章作者理解有误或其他讨论 <a href="https://github.com/xiaoxiaojx/blog/issues">Issues</a> 见 ~</p>
+</blockquote>
+
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="https://xiaoxiaojx.github.io/blog/2020/09/snowpack/" title="link to Snowpack 更快的前端构建工具">Snowpack 更快的前端构建工具</a></h2>
+       <p class="excerpt">背景  最近对脚手架技术架构的升级改造, 虽然在构建速度方面提升了3+倍, 接入项目的大佬们也都甚为满意, 毕竟还是没能达到秒级的开发体验。想着这算到了 webpack 的瓶颈了, 要去调研更快的打包工具及落地的可能性了。现状  新的脚手架对 webpack 的构建速度优化简述为以下几点, 后面可以单独展开分享一下  多线程  前置构建  多页面动态编译/单页多路由动态编译  loader缓存/plugin缓存  持久缓存参赛工具Parcel  其实一直是写 demo 的首选, 说要落地到...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2020-09-29 14:32:24 +0800" class="post-list__meta--date date">2020-09-29</time> &#8226; <span class="post-list__meta--tags tags"></span><a class="btn-border-small" href=https://xiaoxiaojx.github.io/blog/2020/09/snowpack/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2020/11/javascripts-binary-1/";
+        this.page.identifier = "/2020/11/javascripts-binary-1/";
+    };
+
+    var disqus_shortname = 'vno-jekyll';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2020-11-14 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
+        <span class="footer__copyright">本站由 <a href="http://onev.cat">@onevcat</a> 创建，采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2020</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="https://xiaoxiaojx.github.io/blog/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
