@@ -1,21 +1,23 @@
-### [issues blog](https://github.com/xiaoxiaojx/blog/issues)
-> 记录一些 node.js 相关的 📝 学习笔记。
+<img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" width="450" >
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/49e6246d72f44a84858dbb45b76fecf4~tplv-k3u1fbpfcp-watermark.image)
+记录一些 Node.js 相关的 📝 学习笔记, 持续更新中 🚀 ...
 
-### 文章目录
-> 🚀 持续更新中 ...
+### Node.js
+> Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可见 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
+1. lib 模块 ( js 源码实现部分 )
+	1. [buffer 缓存区](https://github.com/xiaoxiaojx/blog/issues/8)
+	2. [cluster 集群](https://github.com/xiaoxiaojx/blog/issues/7)
 
-- [【libuv 源码学习笔记】事件循环](https://github.com/xiaoxiaojx/blog/issues/1)
-- [【libuv 源码学习笔记】线程池与i/o](https://github.com/xiaoxiaojx/blog/issues/2)
-- [【libuv 源码学习笔记】子进程与ipc](https://github.com/xiaoxiaojx/blog/issues/3)
-- [【libuv 源码学习笔记】信号](https://github.com/xiaoxiaojx/blog/issues/5)
-- [【libuv 源码学习笔记】网络与流](https://github.com/xiaoxiaojx/blog/issues/6)
-- [【node 源码学习笔记】微任务](https://github.com/xiaoxiaojx/blog/issues/4)
-- [【node 源码学习笔记】cluster 集群](https://github.com/xiaoxiaojx/blog/issues/7)
-- [【node 源码学习笔记】buffer 缓存区](https://github.com/xiaoxiaojx/blog/issues/8)
-- [【node 源码学习笔记】llhttp 报文解析](https://github.com/xiaoxiaojx/blog/issues/9)
+2. 核心模块 ( c, c++, js 源码实现部分 )
+	1. [微任务](https://github.com/xiaoxiaojx/blog/issues/4)
+	2. [llhttp 报文解析](https://github.com/xiaoxiaojx/blog/issues/9)
 
+3. libuv ( c 源码实现部分 )
+	1. [事件循环](https://github.com/xiaoxiaojx/blog/issues/1)
+	2. [线程池与i/o](https://github.com/xiaoxiaojx/blog/issues/2)
+	3. [子进程与ipc](https://github.com/xiaoxiaojx/blog/issues/3)
+	4. [信号](https://github.com/xiaoxiaojx/blog/issues/5)
+	5. [网络与流](https://github.com/xiaoxiaojx/blog/issues/6)
 
 ---
 
