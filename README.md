@@ -7,6 +7,7 @@
 1. lib 模块 ( js 源码实现部分 )
 	1. [buffer 缓存区](https://github.com/xiaoxiaojx/blog/issues/8)
 	2. [cluster 集群](https://github.com/xiaoxiaojx/blog/issues/7)
+	3. [stream 可读流](https://github.com/xiaoxiaojx/blog/issues/10)
 
 2. 核心模块 ( c, c++, js 源码实现部分 )
 	1. [微任务](https://github.com/xiaoxiaojx/blog/issues/4)
