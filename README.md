@@ -1,9 +1,17 @@
-<img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" width="450" >
+<p align="center">
+  <a href="https://nodejs.org/">
+    <img
+      alt="Node.js"
+      src="https://nodejs.org/static/images/logo-light.svg"
+      width="400"
+    />
+  </a>
+</p>
 
-记录一些 Node.js 相关的 📝 学习笔记, 持续更新中 🚀 ...
+<p align="center">记录一些 Node.js 相关的学习笔记 📝 , To be continued 🚀 </p>
 
-### Node.js
-> Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可见 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
+### Node.js 目录
+> Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可先阅读 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
 1. lib 模块 ( js 源码实现部分 )
 	1. [buffer 缓存区](https://github.com/xiaoxiaojx/blog/issues/8)
 	2. [cluster 集群](https://github.com/xiaoxiaojx/blog/issues/7)
