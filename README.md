@@ -14,6 +14,7 @@
 > Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可先阅读 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
 1. 运行流程 ( c++, js 源码实现部分 )
 	1. [lib 模块运行](https://github.com/xiaoxiaojx/blog/issues/13)
+	2. [c++ 插件运行](https://github.com/xiaoxiaojx/blog/issues/14)
 
 2. lib 模块 ( js 源码实现部分 )
 	1. [buffer 缓存区](https://github.com/xiaoxiaojx/blog/issues/8)
