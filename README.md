@@ -39,5 +39,6 @@
 
 ---
 
+- 同步更新: [CNode：Node.js专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
 - 备注: 学习交流可 issue 中评论或者联系下面本人的微信
 - 微信: xjx784487301
