@@ -1,5 +1,6 @@
 <!-- vscode-markdown-toc -->
 
+## Table of Contents
 * 1. [基础教程](#)
 * 2. [从 Node.js 中学习 C, C++](#Node.jsCC)
 	* 2.1. [__POSIX__, NODE_SHARED_MODE](#POSIX__NODE_SHARED_MODE)
@@ -11,10 +12,11 @@
 	* 2.5. [__attribute__((constructor))和__attribute__((destructor))](#attribute__constructor__attribute__destructor)
 	* 2.6. [__attribute__((visibility("default")))](#attribute__visibilitydefault)
 	* 2.7. [new 和不 new 的区别](#newnew)
-	* 2.8. [点操作符和箭头操作符](#-1)
-	* 2.9. [sigaction, memset](#sigactionmemset)
-	* 2.10. [getauxval](#getauxval)
-	* 2.11. [setvbuf](#setvbuf)
+	* 2.8. [(*(QUEUE **) &((*(q))[0]))](#QUEUEq0)
+	* 2.9. [点操作符和箭头操作符](#-1)
+	* 2.10. [sigaction, memset](#sigactionmemset)
+	* 2.11. [getauxval](#getauxval)
+	* 2.12. [setvbuf](#setvbuf)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -193,15 +195,46 @@ namespace per_process {
 per_process::cli_options->v8_thread_pool_size)
 ```
 
+###  2.8. <a name='QUEUEq0'></a>(*(QUEUE **) &((*(q))[0]))
+其中我们发现 libuv 是通过一组宏定义实现的队列, 代码主要在 deps/uv/src/queue.h
 
-###  2.8. <a name='-1'></a>点操作符和箭头操作符
+![image](https://user-images.githubusercontent.com/23253540/128211397-90416ef2-accc-4399-bbec-4faee17e22ad.png)
+
+这个表达式看似复杂，其实它就相当于"(*q)[0]"，也就是代表QUEUE数组的第一个元素，那么它为什么要写这么复杂呢，主要有两个原因：类型保持、成为左值。 
+```
+// deps/uv/src/queue.h
+
+#define QUEUE_INSERT_TAIL(h, q)                                               \
+  do {                                                                        \
+    QUEUE_NEXT(q) = (h);                                                      \
+    QUEUE_PREV(q) = QUEUE_PREV(h);                                            \
+    QUEUE_PREV_NEXT(q) = (q);                                                 \
+    QUEUE_PREV(h) = (q);                                                      \
+  }                                                                           \
+  while (0)
+```
+还需要进一步看看 QUEUE_NEXT 的实现
+```
+#define QUEUE_NEXT(q)       (*(QUEUE **) &((*(q))[0]))
+#define QUEUE_PREV(q)       (*(QUEUE **) &((*(q))[1]))
+#define QUEUE_PREV_NEXT(q)  (QUEUE_NEXT(QUEUE_PREV(q)))
+#define QUEUE_NEXT_PREV(q)  (QUEUE_PREV(QUEUE_NEXT(q)))
+```
+让我们来拆解一下 (*(QUEUE **) &((*(q))[0])) 的实现
+1. *(q) 获取 q 指针地址的值
+2. (*(q))[0] 获取数组的第 0 项
+3. &((*(q))[0])) 获取第 0 项的指针
+4. (QUEUE **) &((*(q))[0])) 对第 0 项的指针进行强制类型转换
+5. (*(QUEUE **) &((*(q))[0])) 使其成为左值, 可放在表达式的左边，可进行赋值等操作
+
+###  2.9. <a name='-1'></a>点操作符和箭头操作符
 > 查看更多 [点操作符和箭头操作符](https://blog.csdn.net/fulima007/article/details/6327067)
 * 箭头（->）：左边必须为指针，如 new 实例化的类；
 * 点号（.）：左边必须为实体，如结构体，不用 new 的实例。
 
 
 
-###  2.9. <a name='sigactionmemset'></a>sigaction, memset
+###  2.10. <a name='sigactionmemset'></a>sigaction, memset
 > 每个线程都有自己独立的signal mask，但所有线程共享进程的signal action。这意味着，你可以在线程中调用pthread_sigmask(不是sigmask)来决定本线程阻塞哪些信号。但你不能调用sigaction来指定单个线程的信号处理方式。如果在某个线程中调用了sigaction处理某个信号，那么这个进程中的未阻塞这个信号的线程在收到这个信号都会按同一种方式处理这个信号。另外，注意子线程的mask是会从主线程继承而来的, 查看更多 [pthread_sigmask sigaction](https://blog.csdn.net/luzubodfgs/article/details/89252482)
 ```
 // src/node_main.cc
@@ -218,7 +251,7 @@ act.sa_handler = SIG_IGN;
 sigaction(SIGPIPE, &act, nullptr);
 ```
 
-###  2.10. <a name='getauxval'></a>getauxval
+###  2.11. <a name='getauxval'></a>getauxval
 > getauxval() 函数从辅助函数中检索值 向量，内核的 ELF 二进制加载器使用的一种机制 当程序运行时将某些信息传递给用户空间 执行
 
 个人理解是从内核中获取当前程序的一些基础的信息, 比如传参为 AT_BASE 时是获取程序解释器的基地址, 查看更多 [getauxval(3) — Linux manual page](https://man7.org/linux/man-pages/man3/getauxval.3.html)
@@ -233,7 +266,7 @@ sigaction(SIGPIPE, &act, nullptr);
   node::per_process::linux_at_secure = getauxval(AT_SECURE);
 ```
 
-###  2.11. <a name='setvbuf'></a>setvbuf
+###  2.12. <a name='setvbuf'></a>setvbuf
 setvbuf: C 库函数 int setvbuf(FILE *stream, char *buffer, int mode, size_t size) 定义流 stream 应如何缓冲。
 
 _IONBF: 无缓冲：不使用缓冲。每个 I/O 操作都被即时写入。buffer 和 size 参数被忽略。
