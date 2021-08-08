@@ -1,6 +1,7 @@
 <!-- vscode-markdown-toc -->
 
 ## Table of Contents
+
 * 1. [基础教程](#)
 * 2. [从 Node.js 中学习 C, C++](#Node.jsCC)
 	* 2.1. [__POSIX__, NODE_SHARED_MODE](#POSIX__NODE_SHARED_MODE)
@@ -17,6 +18,10 @@
 	* 2.10. [sigaction, memset](#sigactionmemset)
 	* 2.11. [getauxval](#getauxval)
 	* 2.12. [setvbuf](#setvbuf)
+	* 2.13. [size_t](#size_t)
+	* 2.14. [const 和 constexpr](#constconstexpr)
+	* 2.15. [static](#static)
+	* 2.16. [auto](#auto)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -278,4 +283,41 @@ nullptr: C++中有个nullptr的关键字可以用作空指针，既然已经有�
 
 setvbuf(stdout, nullptr, _IONBF, 0);
 setvbuf(stderr, nullptr, _IONBF, 0);
+```
+
+###  2.13. <a name='size_t'></a>size_t
+可以简单理解为 unsigned int, 其主要是为了解决平台的可移植性问题，查看更多 [为什么size_t重要？（Why size_t matters）](https://jeremybai.github.io/blog/2014/09/10/size-t)
+
+```
+// src/node_worker.h
+
+size_t stack_size_ = 4 * 1024 * 1024;
+```
+
+###  2.14. <a name='constconstexpr'></a>const 和 constexpr
+* const 并未区分出编译期常量和运行期常量
+* constexpr 限定在了编译期常量
+查看更多，[C++ const 和 constexpr 的区别？](https://www.zhihu.com/question/35614219)
+```
+// src/node_worker.h
+
+static constexpr size_t kStackBufferSize = 192 * 1024;
+```
+
+###  2.15. <a name='static'></a>static
+当我们同时编译多个文件时，所有未加 static 前缀的全局变量和函数都具有全局可见性, 查看更多 [C 语言中 static 的作用](https://www.runoob.com/w3cnote/c-static-effect.html)
+
+```
+// src/node_worker.h
+
+static constexpr size_t kStackBufferSize = 192 * 1024;
+```
+
+###  2.16. <a name='auto'></a>auto 
+在声明变量的时候可根据变量初始值的数据类型自动为该变量选择与之匹配的数据类型
+```
+// src/node.cc
+
+for (auto& s : stdio) {
+}
 ```
