@@ -39,6 +39,7 @@
 
 
 ### 随笔目录
+> 记录一些 debug / 有趣的新技术 / 随意聊聊 等类型的文章 
 * [127.0.0.1 与 0.0.0.0](https://github.com/xiaoxiaojx/blog/issues/15)
 
 
