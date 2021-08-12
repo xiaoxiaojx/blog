@@ -19,7 +19,7 @@
 	1. [lib 模块运行](https://github.com/xiaoxiaojx/blog/issues/13)
 	2. [c++ 插件运行](https://github.com/xiaoxiaojx/blog/issues/14)
 
-3. lib 模块 ( js 源码实现部分 )
+3. lib 模块 ( c++, js 源码实现部分 )
 	1. [buffer 缓存区](https://github.com/xiaoxiaojx/blog/issues/8)
 	2. [cluster 集群](https://github.com/xiaoxiaojx/blog/issues/7)
 	3. [stream 可读流](https://github.com/xiaoxiaojx/blog/issues/10)
