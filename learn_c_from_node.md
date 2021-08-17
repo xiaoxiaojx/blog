@@ -1,5 +1,4 @@
 <!-- vscode-markdown-toc -->
-
 ## Table of Contents
 
 * 1. [基础教程](#)
@@ -22,6 +21,7 @@
 	* 2.14. [const 和 constexpr](#constconstexpr)
 	* 2.15. [static](#static)
 	* 2.16. [auto](#auto)
+	* 2.17. [err == -1 && errno == EINTR](#err-1errnoEINTR)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -319,5 +319,21 @@ static constexpr size_t kStackBufferSize = 192 * 1024;
 // src/node.cc
 
 for (auto& s : stdio) {
+}
+```
+
+###  2.17. <a name='err-1errnoEINTR'></a>err == -1 && errno == EINTR
+
+在 node 以及 libuv 中经常出现 errno == EINTR 重试的代码，其原因是如果在系统调用正在进行时发生信号，许多系统调用将报告 EINTR 错误代码。实际上没有发生错误，只是因为系统无法自动恢复系统调用而以这种方式报告。这种编码模式只是在发生这种情况时重试系统调用，以忽略中断。
+```
+static int uv__signal_lock(void) {
+  int r;
+  char data;
+
+  do {
+    r = read(uv__signal_lock_pipefd[0], &data, sizeof data);
+  } while (r < 0 && errno == EINTR);
+
+  return (r < 0) ? -1 : 0;
 }
 ```
