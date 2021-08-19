@@ -2,13 +2,13 @@
   <a href="https://nodejs.org/">
     <img
       alt="Node.js"
-      src="https://nodejs.org/static/images/logo-light.svg"
-      width="400"
+      src="https://user-images.githubusercontent.com/23253540/130111471-2f20d7fe-4ac8-4e42-a18a-41d9982c5585.png"
+      width="1000"
     />
   </a>
 </p>
 
-<p align="center">记录一些 Node.js 相关的学习笔记 📝 , To be continued 🚀 </p>
+<p align="center">记录一些 Node.js / libuv / gRPC / protobuf 等学习笔记 📝, To be continued 🚀 </p>
 
 ### Node.js 目录
 > Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可先阅读 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
@@ -39,6 +39,9 @@
 	4. [信号](https://github.com/xiaoxiaojx/blog/issues/5)
 	5. [网络与流](https://github.com/xiaoxiaojx/blog/issues/6)
 
+
+### gRPC 目录
+TODO
 
 ### 随笔目录
 > 记录一些 debug / 有趣的新技术 / 随意聊聊 等类型的文章 
