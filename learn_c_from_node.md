@@ -1,5 +1,5 @@
 <!-- vscode-markdown-toc -->
-## Table of Contents
+## 目录
 
 * 1. [基础教程](#)
 * 2. [从 Node.js 中学习 C, C++](#Node.jsCC)
@@ -22,6 +22,7 @@
 	* 2.15. [static](#static)
 	* 2.16. [auto](#auto)
 	* 2.17. [err == -1 && errno == EINTR](#err-1errnoEINTR)
+	* 2.18. [() {} =](#-1)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -336,4 +337,17 @@ static int uv__signal_lock(void) {
 
   return (r < 0) ? -1 : 0;
 }
+```
+###  2.18. <a name='-1'></a>() {} =
+node 中经常会有变量名后加 () 以及 {} 或者 = 的初始化方式，让人倍感疑惑 🤔， 一般来说
+* = 为赋值操作，调用operator=函数
+* () 可能会造成误解, 如声明了一个函数?
+* {} 所以C++11提出了统一初始化语法：一种至少在概念上可以用于表达任何值的语法。它的实现基于大括号，所以我称之为大括号初始化
+
+查看更多 [C++创建对象时区分圆括号( )和大括号{ }](https://zhuanlan.zhihu.com/p/268894227)
+```
+std::unique_ptr<PlatformWorkerData>
+      worker_data(static_cast<PlatformWorkerData*>(data));
+      
+std::unique_ptr<uv_thread_t> t { new uv_thread_t() };
 ```
