@@ -27,6 +27,7 @@
 	4. [stream 可写流](https://github.com/xiaoxiaojx/blog/issues/11)
 	5. [stream 双工流、转换流、透传流等](https://github.com/xiaoxiaojx/blog/issues/12)
 	6. [worker_threads 工作线程](https://github.com/xiaoxiaojx/blog/issues/16)
+	7. [trace_events 跟踪事件](https://github.com/xiaoxiaojx/blog/issues/19)
 
 4. 核心模块 ( c, c++, js 源码实现部分 )
 	1. [微任务](https://github.com/xiaoxiaojx/blog/issues/4)
