@@ -42,7 +42,8 @@
 
 
 ### gRPC 目录
-TODO
+1. 第 0 章 (基础知识笔记)
+	1. [introduction_to_grpc_basics.md](https://github.com/xiaoxiaojx/blog/blob/master/introduction_to_grpc_basics.md)
 
 ### 随笔目录
 > 记录一些 debug / 有趣的新技术 / 随意聊聊 等类型的文章 
