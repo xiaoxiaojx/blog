@@ -53,6 +53,8 @@
 
 ---
 
-- 同步更新: [CNode：Node.js专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
-- 备注: 学习交流可 issue 中评论或者联系下面本人的微信
-- 微信: xjx784487301
+- 🚗 同步更新: 
+	- [CNode：Node.js专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
+	- [V2EX > Node.js > 深入学习 NodeJs 系列](https://www.v2ex.com/t/803513#reply9)
+- 🐧 学习交流: 可 issue 中评论或者联系本人的微信 xjx784487301
+- 🌈 近期状态: 9月15 ~ 10月15 之间更新频率会低一点，工作比较忙 。。。
