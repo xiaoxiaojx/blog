@@ -49,7 +49,7 @@
 > 记录一些 debug / 有趣的新技术 / 随意聊聊 等类型的文章 
 * [127.0.0.1 与 0.0.0.0](https://github.com/xiaoxiaojx/blog/issues/15)
 * [nextjs 项目热更新失败排查](https://github.com/xiaoxiaojx/blog/issues/18)
-* [巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
+* [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
 
 
 ---
