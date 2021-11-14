@@ -50,6 +50,7 @@
 * [127.0.0.1 与 0.0.0.0](https://github.com/xiaoxiaojx/blog/issues/15)
 * [nextjs 项目热更新失败排查](https://github.com/xiaoxiaojx/blog/issues/18)
 * [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
+* [puppeteer 的实现原理](https://github.com/xiaoxiaojx/blog/issues/21)
 
 
 ---
