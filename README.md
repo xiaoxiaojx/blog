@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<p align="center">记录一些 Node.js / libuv / gRPC / protobuf 等学习笔记 📝, To be continued 🚀 </p>
+<p align="center">Project for learning node / libuv / gRPC internals（💡Language: zh-CN）, To be continued ... </p>
 
 ### Node.js 目录
 > Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可先阅读 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
