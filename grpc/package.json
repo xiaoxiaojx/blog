@@ -20,6 +20,8 @@
         "helloworld_client_stream:client": "node ./helloworld_client_stream/greeter_client.js",
         "helloworld_client_stream:server": "node ./helloworld_client_stream/greeter_server.js",
         "helloworld_stream:client": "node ./helloworld_stream/greeter_client.js",
-        "helloworld_stream:server": "node ./helloworld_stream/greeter_server.js"
+        "helloworld_stream:server": "node ./helloworld_stream/greeter_server.js",
+        "route_guide:client": "node ./route_guide/route_guide_client.js",
+        "route_guide:server": "node ./route_guide/route_guide_server.js"
     }
 }

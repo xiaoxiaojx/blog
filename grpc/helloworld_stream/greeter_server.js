@@ -36,7 +36,7 @@ var hello_proto = grpc.loadPackageDefinition(packageDefinition).helloworld;
  */
 function sayHello(call) {
   [1, 2, 3].forEach((num) => {
-    call.write({ message: "hello" + call.request.name + num });
+    call.write({ message: "hello" + num });
   });
   var num = 0
   call.on('data', response => {

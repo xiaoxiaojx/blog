@@ -32,7 +32,9 @@ function main() {
   } else {
     user = 'world';
   }
-  var call = client.sayHello();
+  var call = client.sayHello((err, stats) => {
+    console.log(err, stats)
+  });
 
   [1, 2, 3].forEach((num) => {
     call.write({ name: "hello" + num });
