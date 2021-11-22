@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<p align="center">记录一些 Node.js / libuv / gRPC / protobuf 等学习笔记 📝, To be continued 🚀 </p>
+<p align="center">Project for learning node / libuv / gRPC internals（💡Language: zh-CN）, To be continued ... </p>
 
 ### Node.js 目录
 > Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可先阅读 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
@@ -49,10 +49,13 @@
 > 记录一些 debug / 有趣的新技术 / 随意聊聊 等类型的文章 
 * [127.0.0.1 与 0.0.0.0](https://github.com/xiaoxiaojx/blog/issues/15)
 * [nextjs 项目热更新失败排查](https://github.com/xiaoxiaojx/blog/issues/18)
+* [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
+* [puppeteer 的实现原理](https://github.com/xiaoxiaojx/blog/issues/21)
 
 
 ---
 
-- 同步更新: [CNode：Node.js专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
-- 备注: 学习交流可 issue 中评论或者联系下面本人的微信
-- 微信: xjx784487301
+- 🚗 同步更新: 
+	- [CNode Node.js专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
+	- [V2EX > Node.js > 深入学习 NodeJs 系列](https://www.v2ex.com/t/803513#reply9)
+- 🐧 学习交流: 可 issue 中评论或者联系本人的微信 xjx784487301
