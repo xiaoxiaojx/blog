@@ -15,6 +15,7 @@
 
 1. 第 0 章 (c, c++ 基础知识笔记)
 	1. [learn_c_from_node.md](https://github.com/xiaoxiaojx/blog/blob/master/learn_c_from_node.md)
+	2. [nodehttp.h](https://github.com/xiaoxiaojx/nodehttp.h)
 2. 运行流程 ( c++, js 源码实现部分 )
 	1. [node 启动运行](https://github.com/xiaoxiaojx/blog/issues/17)
 	2. [lib 模块运行](https://github.com/xiaoxiaojx/blog/issues/13)
