@@ -54,6 +54,7 @@
 * [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
 * [puppeteer 的实现原理](https://github.com/xiaoxiaojx/blog/issues/21)
 * [API 与 ABI 的区别](https://github.com/xiaoxiaojx/blog/issues/22)
+* [pnpm 问题记录](https://github.com/xiaoxiaojx/blog/issues/23)
 
 
 ---
