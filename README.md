@@ -52,6 +52,7 @@
 * [puppeteer 的实现原理](https://github.com/xiaoxiaojx/blog/issues/21)
 * [API 与 ABI 的区别](https://github.com/xiaoxiaojx/blog/issues/22)
 * [pnpm 问题记录](https://github.com/xiaoxiaojx/blog/issues/23)
+* [如何杀死僵尸进程](https://github.com/xiaoxiaojx/blog/issues/24)
 
 
 ---
