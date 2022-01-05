@@ -53,11 +53,17 @@
 * [API 与 ABI 的区别](https://github.com/xiaoxiaojx/blog/issues/22)
 * [pnpm 问题记录](https://github.com/xiaoxiaojx/blog/issues/23)
 * [如何杀死僵尸进程](https://github.com/xiaoxiaojx/blog/issues/24)
-
+* [Pod 中获取到错误的 CPUS](https://github.com/xiaoxiaojx/blog/issues/25)
 
 ---
 
 - 🌈 同步更新: 
 	- [CNode Node.js专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
 	- [V2EX > Node.js > 深入学习 NodeJs 系列](https://www.v2ex.com/t/803513#reply9)
-- 🐧 学习交流: 可 issue 中评论或者联系本人的微信 xjx784487301
+- 🐧 学习交流: 可 issue 中评论或者扫描下方微信二维码
+
+<div style="display:flex;">
+<img src="https://user-images.githubusercontent.com/23253540/148255168-ef69d12b-0515-469f-bd80-530a58afcf7d.png" height="200"/>
+
+<img src="https://user-images.githubusercontent.com/23253540/148255278-38759909-1407-4583-8d54-e3954dc466e0.png" height="200"/>
+</div>
