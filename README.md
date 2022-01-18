@@ -11,11 +11,10 @@
 <p align="center">Project for learning node / libuv / gRPC internals（💡Language: zh-CN）, To be continued ... </p>
 
 ### Node.js 目录
-> Node.js 相关介绍及基础可先阅读 [官网 Node.js 入门教程](http://nodejs.cn/learn), 核心模块的使用及文档可先阅读 [API 文档 | Node.js 中文网](http://nodejs.cn/api/)
-
 1. 第 0 章 (c, c++ 基础知识笔记)
 	1. [learn_c_from_node.md](https://github.com/xiaoxiaojx/blog/blob/master/learn_c_from_node.md)
-	2. [nodehttp.h](https://github.com/xiaoxiaojx/nodehttp.h)
+	2. [c_data_types.md](https://github.com/xiaoxiaojx/blog/blob/master/c_data_types.md)
+	3. [nodehttp.h](https://github.com/xiaoxiaojx/nodehttp.h)
 2. 运行流程 ( c++, js 源码实现部分 )
 	1. [node 启动运行](https://github.com/xiaoxiaojx/blog/issues/17)
 	2. [lib 模块运行](https://github.com/xiaoxiaojx/blog/issues/13)
@@ -47,16 +46,24 @@
 	1. [introduction_to_grpc_basics.md](https://github.com/xiaoxiaojx/blog/blob/master/introduction_to_grpc_basics.md)
 
 ### 随笔目录
-> 记录一些 debug / 有趣的新技术 / 随意聊聊 等类型的文章 
 * [127.0.0.1 与 0.0.0.0](https://github.com/xiaoxiaojx/blog/issues/15)
 * [nextjs 项目热更新失败排查](https://github.com/xiaoxiaojx/blog/issues/18)
 * [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
 * [puppeteer 的实现原理](https://github.com/xiaoxiaojx/blog/issues/21)
-
+* [API 与 ABI 的区别](https://github.com/xiaoxiaojx/blog/issues/22)
+* [pnpm 问题记录](https://github.com/xiaoxiaojx/blog/issues/23)
+* [如何杀死僵尸进程](https://github.com/xiaoxiaojx/blog/issues/24)
+* [Pod 中获取到错误的 CPUS](https://github.com/xiaoxiaojx/blog/issues/25)
 
 ---
 
-- 🚗 同步更新: 
+- 🌈 同步更新: 
 	- [CNode Node.js专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
 	- [V2EX > Node.js > 深入学习 NodeJs 系列](https://www.v2ex.com/t/803513#reply9)
-- 🐧 学习交流: 可 issue 中评论或者联系本人的微信 xjx784487301
+- 🐧 学习交流: 可 issue 中评论或者扫描下方微信二维码
+
+<div style="display:flex;">
+<img src="https://user-images.githubusercontent.com/23253540/148255168-ef69d12b-0515-469f-bd80-530a58afcf7d.png" height="200"/>
+
+<img src="https://user-images.githubusercontent.com/23253540/148255278-38759909-1407-4583-8d54-e3954dc466e0.png" height="200"/>
+</div>
