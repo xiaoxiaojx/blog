@@ -1,0 +1,16 @@
+{
+  "name": "tini",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-gyp configure && node-gyp build",
+    "start": "node ./main.js",
+    "bs": "python --version && npm run build && npm run start"
+  },
+  "author": "kaiduo",
+  "license": "ISC",
+  "dependencies": {
+    "node-gyp": "^7.1.2"
+  }
+}
