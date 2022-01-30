@@ -55,6 +55,7 @@
 * [如何杀死僵尸进程](https://github.com/xiaoxiaojx/blog/issues/24)
 * [Pod 中获取到错误的 CPUS](https://github.com/xiaoxiaojx/blog/issues/25)
 * [Uncaught ReferenceError: exports is not defined 问题记录](https://github.com/xiaoxiaojx/blog/issues/27)
+* [Module parse failed: Unexpected token 问题记录](https://github.com/xiaoxiaojx/blog/issues/28)
 
 ---
 
