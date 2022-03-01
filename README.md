@@ -31,6 +31,9 @@ Personal study notes and problem records.
 	4. [信号](https://github.com/xiaoxiaojx/blog/issues/5)
 	5. [网络与流](https://github.com/xiaoxiaojx/blog/issues/6)
 
+6. Node-API ( c, c++ 源码实现部分 )
+	1. [node-addon-api 的错误处理](https://github.com/xiaoxiaojx/blog/issues/29)
+
 
 ### gRPC 目录
 1. 第 0 章 (基础知识笔记)
