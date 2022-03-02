@@ -1,4 +1,4 @@
-## blog
+# blog
 Personal study notes and problem records.
 
 ### Node.js 目录
