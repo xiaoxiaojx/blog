@@ -5,6 +5,7 @@ Personal study notes and problem records.
 1. 第 0 章 (c, c++ 基础知识笔记)
 	1. [learn_c_from_node.md](https://github.com/xiaoxiaojx/blog/blob/master/learn_c_from_node.md)
 	2. [c_data_types.md](https://github.com/xiaoxiaojx/blog/blob/master/c_data_types.md)
+	3. [v8LocalValue 引发的思考](https://github.com/xiaoxiaojx/blog/issues/30)
 2. 运行流程 ( c++, js 源码实现部分 )
 	1. [node 启动运行](https://github.com/xiaoxiaojx/blog/issues/17)
 	2. [lib 模块运行](https://github.com/xiaoxiaojx/blog/issues/13)
