@@ -55,6 +55,7 @@
 - [Pod 中获取到错误的 CPUS](https://github.com/xiaoxiaojx/blog/issues/25)
 - [Uncaught ReferenceError: exports is not defined 问题记录](https://github.com/xiaoxiaojx/blog/issues/27)
 - [Module parse failed: Unexpected token 问题记录](https://github.com/xiaoxiaojx/blog/issues/28)
+- [React SSR 子组件获取不到 Context 问题记录](https://github.com/xiaoxiaojx/blog/issues/33)
 
 ---
 
