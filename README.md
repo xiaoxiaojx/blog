@@ -1,4 +1,23 @@
 # blog
+📝 to be continued ...
+
+### Shared 目录
+1. Node.js 应用 debug 日志
+	1. [Next.js 项目热更新失败排查](https://github.com/xiaoxiaojx/blog/issues/18)
+	2. [Docker 中 15k 僵尸进程残留案发现场还原](https://github.com/xiaoxiaojx/blog/issues/24)
+	3. [K8s Pod 中获取到错误的 cpus.length 问题记录](https://github.com/xiaoxiaojx/blog/issues/25)
+	4. [Node 包管理工具迁移为 pnpm 问题记录](https://github.com/xiaoxiaojx/blog/issues/23)
+	4. [Uncaught ReferenceError: exports is not defined 问题记录](https://github.com/xiaoxiaojx/blog/issues/27)
+	5. [Module parse failed: Unexpected token 问题记录](https://github.com/xiaoxiaojx/blog/issues/28)
+	6. [React SSR 子组件获取不到 Context 问题记录](https://github.com/xiaoxiaojx/blog/issues/33)
+
+2. 技术原理分享
+   1. [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
+   2. [127.0.0.1 与 0.0.0.0 的区别](https://github.com/xiaoxiaojx/blog/issues/15)
+   3. [puppeteer 的实现原理](https://github.com/xiaoxiaojx/blog/issues/21)
+   4. [API 与 ABI 的区别](https://github.com/xiaoxiaojx/blog/issues/22)
+
+
 ### Node.js 目录
 
 1. 第 0 章 (c, c++ 基础)
@@ -43,19 +62,6 @@
 1. 第 0 章 (基础知识笔记)
    1. [introduction_to_grpc_basics.md](https://github.com/xiaoxiaojx/blog/blob/master/introduction_to_grpc_basics.md)
 
-### 随笔目录
-
-- [127.0.0.1 与 0.0.0.0 的区别](https://github.com/xiaoxiaojx/blog/issues/15)
-- [Next.js 项目热更新失败排查](https://github.com/xiaoxiaojx/blog/issues/18)
-- [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
-- [puppeteer 的实现原理](https://github.com/xiaoxiaojx/blog/issues/21)
-- [API 与 ABI 的区别](https://github.com/xiaoxiaojx/blog/issues/22)
-- [pnpm 问题记录](https://github.com/xiaoxiaojx/blog/issues/23)
-- [如何杀死僵尸进程](https://github.com/xiaoxiaojx/blog/issues/24)
-- [Pod 中获取到错误的 CPUS](https://github.com/xiaoxiaojx/blog/issues/25)
-- [Uncaught ReferenceError: exports is not defined 问题记录](https://github.com/xiaoxiaojx/blog/issues/27)
-- [Module parse failed: Unexpected token 问题记录](https://github.com/xiaoxiaojx/blog/issues/28)
-- [React SSR 子组件获取不到 Context 问题记录](https://github.com/xiaoxiaojx/blog/issues/33)
 
 ---
 
