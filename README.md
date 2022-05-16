@@ -11,6 +11,7 @@
 	5. [Module parse failed: Unexpected token 问题记录](https://github.com/xiaoxiaojx/blog/issues/28)
 	6. [React SSR 子组件获取不到 Context 问题记录](https://github.com/xiaoxiaojx/blog/issues/33)
 	7. [Next.js 未能实时渲染问题排查](https://github.com/xiaoxiaojx/blog/issues/34)
+	8. [C++ addons undefined symbol 问题排查](https://github.com/xiaoxiaojx/blog/issues/35)
 
 2. 技术原理分享
    1. [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
