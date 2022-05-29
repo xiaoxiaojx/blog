@@ -12,6 +12,7 @@
 	6. [React SSR 子组件获取不到 Context 问题记录](https://github.com/xiaoxiaojx/blog/issues/33)
 	7. [Next.js 未能实时渲染问题排查](https://github.com/xiaoxiaojx/blog/issues/34)
 	8. [C++ addons undefined symbol 问题排查](https://github.com/xiaoxiaojx/blog/issues/35)
+	9. [v8 源码构建问题记录](https://github.com/xiaoxiaojx/blog/issues/36)
 
 2. 技术原理分享
    1. [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
@@ -23,10 +24,9 @@
 ### Node.js 目录
 
 1. 第 0 章 (c, c++ 基础)
-   1. [源代码构建 v8](https://github.com/xiaoxiaojx/blog/issues/36)
-   2. [learn_c_from_node.md](https://github.com/xiaoxiaojx/blog/issues/32)
-   3. [c 基础数据类型记录](https://github.com/xiaoxiaojx/blog/issues/31)
-   4. [v8LocalValue 引发的思考](https://github.com/xiaoxiaojx/blog/issues/30)
+   1. [learn_c_from_node.md](https://github.com/xiaoxiaojx/blog/issues/32)
+   2. [c 基础数据类型记录](https://github.com/xiaoxiaojx/blog/issues/31)
+   3. [v8LocalValue 引发的思考](https://github.com/xiaoxiaojx/blog/issues/30)
 2. 运行流程 ( c++, js 源码实现部分 )
 
    1. [node 启动运行](https://github.com/xiaoxiaojx/blog/issues/17)
