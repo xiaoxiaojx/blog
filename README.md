@@ -13,6 +13,7 @@
 	7. [Next.js 未能实时渲染问题排查](https://github.com/xiaoxiaojx/blog/issues/34)
 	8. [C++ addons undefined symbol 问题排查](https://github.com/xiaoxiaojx/blog/issues/35)
 	9. [v8 源码构建问题记录](https://github.com/xiaoxiaojx/blog/issues/36)
+	10. [服务端流式渲染 IOS 中踩坑记](https://github.com/xiaoxiaojx/blog/issues/37)
 
 2. 技术原理分享
    1. [2021-10-14 凯多 巨石应用解决方案 nopack](https://github.com/xiaoxiaojx/blog/issues/20)
