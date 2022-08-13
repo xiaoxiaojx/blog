@@ -62,6 +62,7 @@
 
 6. Node-API ( c, c++ 源码实现部分 )
    1. [node-addon-api 的错误处理](https://github.com/xiaoxiaojx/blog/issues/29)
+   2. [v8::TryCatch 的使用](https://github.com/xiaoxiaojx/blog/issues/39)
 
 ### gRPC 目录
 
