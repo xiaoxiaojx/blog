@@ -1,5 +1,5 @@
 # blog
-📝 to be continued ...
+📝 记录一些遇到的问题与学习笔记
 
 ### Shared 目录
 1. Node.js 应用 debug 日志
@@ -12,9 +12,8 @@
 	6. [React SSR 子组件获取不到 Context 问题记录](https://github.com/xiaoxiaojx/blog/issues/33)
 	7. [Next.js 未能实时渲染问题排查](https://github.com/xiaoxiaojx/blog/issues/34)
 	8. [C++ addons undefined symbol 问题排查](https://github.com/xiaoxiaojx/blog/issues/35)
-	9. [v8 源码构建问题记录](https://github.com/xiaoxiaojx/blog/issues/36)
-	10. [服务端流式渲染 iOS 中踩坑记](https://github.com/xiaoxiaojx/blog/issues/37)
-	11. [webpack 不止静态分析](https://github.com/xiaoxiaojx/blog/issues/38)
+	9. [服务端流式渲染 iOS 中踩坑记](https://github.com/xiaoxiaojx/blog/issues/37)
+	10. [webpack 不止静态分析](https://github.com/xiaoxiaojx/blog/issues/38)
 	
 
 2. 技术原理分享
@@ -26,18 +25,16 @@
 
 ### Node.js 目录
 
-1. 第 0 章 (c, c++ 基础)
+1. 第 0 章
    1. [learn_c_from_node.md](https://github.com/xiaoxiaojx/blog/issues/32)
    2. [c 基础数据类型记录](https://github.com/xiaoxiaojx/blog/issues/31)
-   3. [v8LocalValue 引发的思考](https://github.com/xiaoxiaojx/blog/issues/30)
-2. 运行流程 ( c++, js 源码实现部分 )
 
+2. 运行流程
    1. [node 启动运行](https://github.com/xiaoxiaojx/blog/issues/17)
    2. [lib 模块运行](https://github.com/xiaoxiaojx/blog/issues/13)
    3. [c++ 插件运行](https://github.com/xiaoxiaojx/blog/issues/14)
 
-3. lib 模块 ( c++, js 源码实现部分 )
-
+3. lib 模块
    1. [buffer 缓存区](https://github.com/xiaoxiaojx/blog/issues/8)
    2. [cluster 集群](https://github.com/xiaoxiaojx/blog/issues/7)
    3. [stream 可读流](https://github.com/xiaoxiaojx/blog/issues/10)
@@ -46,23 +43,23 @@
    6. [worker_threads 工作线程](https://github.com/xiaoxiaojx/blog/issues/16)
    7. [trace_events 跟踪事件](https://github.com/xiaoxiaojx/blog/issues/19)
 
-4. 核心模块 ( c, c++, js 源码实现部分 )
-
+4. 核心模块
    1. [微任务](https://github.com/xiaoxiaojx/blog/issues/4)
    2. [llhttp 报文解析](https://github.com/xiaoxiaojx/blog/issues/9)
    3. [http server 的实现](https://github.com/xiaoxiaojx/nodehttp.h)
+   4. [node-addon-api 的错误处理](https://github.com/xiaoxiaojx/blog/issues/29)
 
-5. libuv ( c 源码实现部分 )
+5. v8
+   1. [v8 源码构建问题记录](https://github.com/xiaoxiaojx/blog/issues/36)
+   2. [v8::LocalValue 引发的思考](https://github.com/xiaoxiaojx/blog/issues/30)
+   3. [v8::TryCatch 的使用](https://github.com/xiaoxiaojx/blog/issues/39)
 
+6. libuv
    1. [事件循环](https://github.com/xiaoxiaojx/blog/issues/1)
    2. [线程池与 i/o](https://github.com/xiaoxiaojx/blog/issues/2)
    3. [子进程与 ipc](https://github.com/xiaoxiaojx/blog/issues/3)
    4. [信号](https://github.com/xiaoxiaojx/blog/issues/5)
    5. [网络与流](https://github.com/xiaoxiaojx/blog/issues/6)
-
-6. Node-API ( c, c++ 源码实现部分 )
-   1. [node-addon-api 的错误处理](https://github.com/xiaoxiaojx/blog/issues/29)
-   2. [v8::TryCatch 的使用](https://github.com/xiaoxiaojx/blog/issues/39)
 
 ### gRPC 目录
 
@@ -71,6 +68,4 @@
 
 
 ---
-
-- 🌈 同步更新: [CNode Node.js 专业中文社区 > 深入学习 NodeJs 系列](https://cnodejs.org/topic/60f58c8ae3e67138bc58eacc)
 - 🐧 学习交流: 可 issue 中评论或者联系微信 xjx784487301
