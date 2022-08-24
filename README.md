@@ -14,6 +14,7 @@
 	8. [C++ addons undefined symbol 问题排查](https://github.com/xiaoxiaojx/blog/issues/35)
 	9. [服务端流式渲染 iOS 中踩坑记](https://github.com/xiaoxiaojx/blog/issues/37)
 	10. [webpack 不止静态分析](https://github.com/xiaoxiaojx/blog/issues/38)
+	11. [Next.js Invalid or unexpected token 问题记录](https://github.com/xiaoxiaojx/blog/issues/40)
 	
 
 2. 技术原理分享
